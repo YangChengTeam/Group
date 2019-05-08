@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+      "nav": "../../components/nav/nav",
+      "tab": "../../components/tab/index"
+  },
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+}
