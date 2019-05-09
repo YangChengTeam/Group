@@ -1,0 +1,8 @@
+<!--components/banner/banner.wxml-->
+
+
+<swiper class="banner">
+  <swiper-item wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+     <image src="{{item.icoUrl}}" bindtap='nav2path' data-path="{{item.path}}"></image>
+  </swiper-item>
+</swiper>

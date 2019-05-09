@@ -31,15 +31,21 @@ Component({
     path: {
       type: String,
       value: ''
+    },
+    isnop: {
+      type: Number,
+      value: 0
+    },
+    opacity: {
+      type: Float32Array,
+      value: 1
     }
   },
-  ready() {
+  attached() {
     let thiz = this
-    setTimeout(function(){
-      thiz.setData({
-        ...thiz.properties
-      })
-    }, 20)
+    thiz.setData({
+      ...thiz.properties
+    })
   },
   /**
    * 组件的方法列表

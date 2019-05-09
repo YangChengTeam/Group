@@ -1,13 +1,5 @@
-// views/list/search_list.js
-// 搜索
-
-const regeneratorRuntime = global.regeneratorRuntime = require('../../libs/runtime')
-const app = getApp()
-
-const BasePage = require('../../base/base_page.js')
-
-
-BasePage({
+// views/list/b2c_list.js
+Page({
 
   /**
    * 页面的初始数据
@@ -22,9 +14,7 @@ BasePage({
   onLoad: function (options) {
 
   },
-  
-  onShow() {
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -32,6 +22,12 @@ BasePage({
 
   },
 
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

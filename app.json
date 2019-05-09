@@ -20,17 +20,49 @@
     "views/energy/list",
     "views/energy/active",
     "views/my/discuss_list",
-    "views/list/search_list",  
+    "views/list/search_list",
     "views/my/discuss_info",
-    "views/card/index"
+    "views/card/index",
+    "views/list/b2c_list"
   ],
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "views/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "views/list/search_list",
+        "text": "分类"
+      },
+      {
+        "pagePath": "views/list/quick_list",
+        "text": "抢购"
+      },
+      {
+        "pagePath": "views/shop/index",
+        "text": "好店"
+      },
+      {
+        "pagePath": "views/my/index",
+        "text": "我的"
+      }
+    ]},
   "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "武汉团购",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
-     "enablePullDownRefresh": true
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
-  "usingComponents": {}
+  "usingComponents": {
+    "nav": "../../components/nav/nav",
+    "tab": "../../custom-tab-bar/index"
+  }
 }

@@ -1,8 +1,12 @@
 // views/list/quick_list.js
 // 抢购列表
 
+const regeneratorRuntime = global.regeneratorRuntime = require('../../libs/runtime')
+const app = getApp()
 
-Page({
+const BasePage = require('../../base/base_page.js')
+
+BasePage({
 
   /**
    * 页面的初始数据

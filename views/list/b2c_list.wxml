@@ -1,0 +1,3 @@
+<!--views/list/b2c_list.wxml-->
+<nav background="{{basicConfig.backgroundColor}}" isback="1"  title="武汉团购" color=""></nav>
+<tab list="{{tabList}}" wx:if="{{tabList.length > 0}}"></tab>

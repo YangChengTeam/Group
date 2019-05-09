@@ -41,12 +41,11 @@ var BasePage = function(obj) {
    */
   obj.selectedTab = function() {
     var thiz = this
+    var index = -1;
 
-    let hasTabBar = typeof thiz.getTabBar === 'function' &&
-      thiz.getTabBar();
-    if (!hasTabBar) return
+    var hasTabBar = typeof this.getTabBar === 'function' &&
+      this.getTabBar()
 
-    var index = 0;
     for (let i = 0; i < app.tabList.length; i++) {
       let item = app.tabList[i]
       if (item.pagePath.indexOf(thiz.route) != -1) {
@@ -55,9 +54,15 @@ var BasePage = function(obj) {
       }
     }
 
-    thiz.getTabBar().setData({
-      selected: index
-    })
+    if(hasTabBar){
+      this.getTabBar().setData({
+         selected: index
+      })
+    } else {
+      this.setData({
+        selected: index
+        })
+    }
   }
 
   /**
@@ -72,6 +77,9 @@ var BasePage = function(obj) {
 
     if(!app.tabList || app.tabList.length == 0) return
 
+    var hasTabBar = typeof this.getTabBar === 'function' &&
+      this.getTabBar()
+
     var isRefreshTabs = false
     for (let i = 0; i < app.tabList.length; i++) {
       let item = app.tabList[i]
@@ -82,20 +90,27 @@ var BasePage = function(obj) {
     }
 
     if (isRefreshTabs) {
-      thiz.setData({
-         tabList: app.tabList
-      })
+      if(hasTabBar){
+        thiz.getTabBar().setData({
+          list: app.tabList
+        })
+      }else{
+        thiz.setData({
+          tabList: app.tabList
+        })
+      }
     }
   }
 
   /**
    * 重载Page onLoad
    */
-  obj.mirror_onLoad = obj.mirror_onLoad || function() {};
+  obj.mirror_onLoad = obj.onLoad || function() {};
   obj.onLoad = function() {
+    obj = { ...obj, ...this }  // 合并到子Page
     obj.mirror_onLoad()
     this.setData({
-      basicConfig: app.templateConfig.basic
+      basicConfig: app.templateConfig.theme
     })
     this.refreshTabs()
   }
@@ -108,7 +123,6 @@ var BasePage = function(obj) {
     obj.mirror_onShow()
     this.selectedTab()
   }
-
 
   Page(obj)
 }

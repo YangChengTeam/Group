@@ -1,2 +1,2 @@
 <!--views/list/quick_list.wxml-->
-<text>views/list/quick_list.wxml</text>
+<tab list="{{tabList}}" wx:if="{{tabList.length > 0}}" selected="{{selected}}"></tab>

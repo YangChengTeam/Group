@@ -1,5 +1,5 @@
 <!--components/nav/nav.wxml-->
-<basenav background="{{background}}" color="{{color}}">
+<basenav opacity="{{opacity}}" isnop="{{isnop}}" background="{{background}}" color="{{color}}">
   <view class="nav-content">
     <image class="nav-back" wx:if="{{isback==1}}" src="../../assets/images/{{back_icon_path}}"></image>
     <view class="nav-title">{{title}}</view>

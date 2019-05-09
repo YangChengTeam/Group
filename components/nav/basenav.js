@@ -13,9 +13,18 @@ Component({
     background: {
       type: String,
       value: '#fff'
+    },
+    isnop: {
+        type: Number,
+        value: 0
+    },
+    opacity: {
+      type: Float32Array,
+      value: 1
     }
   },
   ready(){
+
     if (app.totalTopHeight && app.statusBarHeight && app.titleBarHeight){
       this.setData({
         totalTopHeight: app.totalTopHeight,
@@ -24,22 +33,7 @@ Component({
         ...this.properties
       })
       return
-    }
-    let thiz = this
-    wx.getSystemInfo({
-      success: function (res) {
-        app.titleBarHeight = 44
-        app.systemInfo = res
-        app.statusBarHeight = res.statusBarHeight
-        app.totalTopHeight = app.statusBarHeight + app.titleBarHeight
-
-        thiz.setData({
-          totalTopHeight: app.totalTopHeight,
-          statusBarHeight: app.statusBarHeight,
-          titleBarHeight: app.titleBarHeight
-        })
-      }
-    })
+    }    
   },
   
 })

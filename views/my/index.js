@@ -1,7 +1,11 @@
 // views/my/index.js
 // 个人中心
+const regeneratorRuntime = global.regeneratorRuntime = require('../../libs/runtime')
+const app = getApp()
 
-Page({
+const BasePage = require('../../base/base_page.js')
+
+BasePage({
 
   /**
    * 页面的初始数据
