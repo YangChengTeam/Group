@@ -1,0 +1,123 @@
+<!--views/my/sub/order_detail.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="订单详情"></nav>
+
+<view class='g-white-box' wx:for="{{info.info.write_off}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+  <view class='u-h3'>
+    <text class='u-h3-t1' style='font-weight:normal'>{{item.goods_name}}</text>
+  </view>
+  <view class='m-main-box'>
+    <view class='m-qr-img'>
+      <image src='/images/img.png' class='u-qr-img'></image>
+      <text class='u-qr-t1'>未到核销期</text>
+    </view>
+    <text class='u-qr-title'>请将此二维码展示给商家核销</text>
+  </view>
+</view>
+<view class='g-white-box g-usered'  wx:for="{{info.info.write_off}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+  <view class='u-h3'>
+    <text class='u-h3-t1'>核销码： </text>
+  </view>
+  <view class='m-main-box'>
+    <view class='m-case-money'>
+      <text class='u-text-left'>{{item.write_off_code}}</text>
+      <text class='u-text-center' style='text-align:right'>（已使用）</text>
+    </view>
+  </view>
+</view>
+<view class='g-white-box'>
+  <view class='u-h3'>
+    <text class='u-h3-t1'>订单总价： </text>
+    <text class='u-h3-t2'>￥{{info.info.orders.orders_money}}（抢购余额支付：{{info.info.orders.pt_money}}元）</text>
+  </view>
+  <view class='m-main-box'>
+    <view class='m-case-money'>
+      <text class='u-text-left'>姓名：</text>
+      <text class='u-text-center'>{{info.info.orders.buyer_name}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>支付时间：</text>
+      <text class='u-text-center'>{{info.info.orders.pay_time}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>订单号：</text>
+      <text class='u-text-center'>{{info.info.orders.orders_sn}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>有效期：</text>
+      <text class='u-text-center'>{{info.info.orders.write_off_start_time}}至{{info.info.orders.write_off_end_time}}</text>
+    </view>
+    <view class='u-qr-btn' bindtap='refund'>申请退款</view>
+  </view>
+</view>
+<view class='g-white-box' wx:for="{{info.info.shop}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+  <view class='u-h3'>
+    <text class='u-h3-t1'>商家信息： </text>
+  </view>
+  <view class='m-main-box'>
+    <text class='u-h4'>{{item.name}}</text>
+    <view class='m-case-money'>
+      <text class='u-text-left'>营业时间：</text>
+      <text class='u-text-center'>{{item.business_hours}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>商家电话：</text>
+      <text class='u-text-center'>{{item.tel}}</text>
+      <text class='u-text-right' bindtap='callphone' data-item="{{item}}">拨号</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>商家地址：</text>
+      <text class='u-text-center'>{{item.address}}</text>
+      <text class='u-text-right' bindtap='openmap' data-item="{{item}}">导航</text>
+    </view>
+  </view>
+</view>
+<view class='g-white-box g-goods-money'>
+  <view class='u-h3'>
+    <text class='u-h3-t1'>订单金额： </text>
+  </view>
+  <view class='m-main-box'>
+    <view class='m-case-money'>
+      <text class='u-text-left'>App优惠金额</text>
+      <text class='u-text-center'>￥{{info.info.orders.app_money}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>团长优惠金额</text>
+      <text class='u-text-center'>￥{{info.info.orders.founder_money}}</text>
+    </view>
+    <!-- <view class='m-case-money'>
+      <text class='u-text-left'>会员优惠金额</text>
+      <text class='u-text-center'>{{info.info.orders.founder_money}}</text>
+    </view> -->
+    <view class='m-case-money'>
+      <text class='u-text-left'>红包抵扣金额</text>
+      <text class='u-text-center'>￥{{info.info.orders.hongbao_money}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>积分抵扣金额</text>
+      <text class='u-text-center'>￥{{info.info.orders.point_money}}</text>
+    </view>
+    <view class='m-case-money'>
+      <text class='u-text-left'>微信支付金额</text>
+      <text class='u-text-center'>￥{{info.info.orders.rmb_money}}</text>
+    </view>
+  </view>
+</view>
+<view class='g-white-box g-goods-money'>
+  <view class='u-h3'>
+    <text class='u-h3-t1'>订单优惠： </text>
+  </view>
+  <view class='m-main-box'>
+    <view class='m-case-money'>
+      <text class='u-text-left'>抢购余额抵扣</text>
+      <text class='u-text-center'>￥{{info.info.orders.pt_money}}</text>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+

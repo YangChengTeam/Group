@@ -2,28 +2,57 @@
   "pages": [
     "views/home/index",
     "views/info/index",
-    "views/my/index",
     "views/list/act_list",
-    "views/bargain/index",
     "views/info/bargain",
     "views/list/group_list",
     "views/list/quick_list",
     "views/info/shop",
-    "views/shop/index",
-    "views/shop/enter",
     "views/infoflow/index",
     "views/infoflow/info",
-    "views/my/order_list",
-    "views/my/join_partner",
     "views/info/lottery",
     "views/list/lottery_list",
-    "views/energy/list",
-    "views/energy/active",
-    "views/my/discuss_list",
     "views/list/search_list",
-    "views/my/discuss_info",
     "views/card/index",
-    "views/list/b2c_list"
+    "views/list/b2c_list",
+    "views/my/index",
+    "views/card/pay",
+    "views/card/pay2",
+    "views/shop/search",
+    "views/shop/index",
+    "views/withdraw/index",
+    "views/withdraw/withdraw",
+    "views/withdraw/success"
+  ],
+  "subpackages": [
+    {
+      "root": "views/my/sub",
+      "pages": [
+        
+        "join_partner",
+        
+        "client",
+        "rank",
+        "promotion_record",
+
+        "bargain_list",
+       
+        "order_list",
+        "order_pay",
+        "order_detail",
+        "order_comment",
+        "order_comment_success",
+                
+        "red_envelope",
+        "red_envelope_detail",
+        "exchange_red_envelope",
+        "point_record",
+
+        "promotion_content"
+        
+        
+      ],
+      "independent": true
+    }
   ],
   "tabBar": {
     "custom": true,
@@ -45,20 +74,20 @@
         "text": "抢购"
       },
       {
-        "pagePath": "views/shop/index",
+        "pagePath": "views/list/act_list",
         "text": "好店"
       },
       {
         "pagePath": "views/my/index",
         "text": "我的"
       }
-    ]},
+    ]
+  },
   "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "武汉团购",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom",
-    "enablePullDownRefresh": true
+    "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {

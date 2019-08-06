@@ -1,0 +1,585 @@
+/* views/my/sub/order_pay.wxss */
+
+page {
+  background: #f8f8f8;
+  padding: 0 0 130rpx 0;
+}
+
+.g-time-box {
+  width: 100%;
+  height: 180rpx;
+  background: linear-gradient(to right, #ec5d83, #e2505a, #f95d55, #f46d1b);
+  display: block;
+  overflow: hidden;
+}
+
+.g-time-box .u-t1 {
+  width: 100%;
+  height: 26rpx;
+  line-height: 26rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #fff;
+  margin: 50rpx 0 0;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.g-time-box .u-t2 {
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #fff;
+  margin: 14rpx 0 0;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.g-goods-msg {
+  width: 100%;
+  height: auto;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  overflow: hidden;
+  background: #fff;
+}
+
+.g-goods-msg image {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  overflow: hidden;
+  border-radius: 12rpx;
+}
+
+.g-goods-msg .m-right {
+  width: auto;
+  height: auto;
+  margin: 0 0 0 30rpx;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-goods-msg .m-right .u-t1 {
+  width: 100%;
+  height: 70rpx;
+  line-height: 36rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  display: block;
+  overflow: hidden;
+}
+
+.g-goods-msg .m-right .u-t2 {
+  width: 100%;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #ff0b28;
+  margin: 14rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-goods-msg .m-right .u-t2 text {
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #888;
+  text-decoration: line-through;
+  margin: 0 0 0 22rpx;
+}
+
+/*购买数量*/
+
+.g-buysize-box {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  display: block;
+  overflow: hidden;
+  border-top: 2rpx solid #eee;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.g-buysize-box .u-h3 {
+  width: auto;
+  height: 117rpx;
+  line-height: 117rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-buysize-box .m-buy-edit {
+  width: 204rpx;
+  height: 59rpx;
+  line-height: 55rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  border: 2rpx solid #cdcdcd;
+  border-radius: 44rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 27rpx 0 0;
+}
+
+.g-buysize-box .m-buy-edit .u-buy-min {
+  width: 63rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  color:#cdcdcd;
+}
+
+.g-buysize-box .m-buy-edit .u-buy-max {
+  width: 63rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  color:#cdcdcd;
+}
+
+.g-buysize-box .m-buy-edit .u-buy-size {
+  width: auto;
+  border-left: 2rpx solid #cdcdcd;
+  border-right: 2rpx solid #cdcdcd;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  color:#cdcdcd;
+}
+
+/*红包优惠*/
+
+.g-hbyb-box {
+  width: 100%;
+  height: auto;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 24rpx 0 0;
+}
+
+.g-hbyb-box2 {
+   margin-top: 0;
+   border-top: 1px solid #eee;
+}
+
+.g-hbyb-box .u-h3 {
+  width: auto;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-hbyb-box .u-label {
+  width: auto;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  text-align: center;
+  margin: 25rpx 0rpx 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-hbyb-box .u-icon {
+  width: 14rpx;
+  height: 14rpx;
+  border-top: 4rpx solid #999;
+  border-right: 4rpx solid #999;
+  transform: rotate(45deg);
+  margin: 34rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+/*开通会员*/
+
+.g-kthy-box {
+  width: 100%;
+  height: 181rpx;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 24rpx 0 0;
+}
+
+.g-kthy-box .m-kthy-left {
+  width: auto;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-kthy-box .m-kthy-left .u-left-label {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-left .u-left-label image {
+  width: 202rpx;
+  height: 40rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-left .u-left-t1 {
+  width: 100%;
+  height: auto;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #000;
+  margin: 30rpx 0 0 30rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-left .u-left-t2 {
+  width: 100%;
+  height: auto;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #868686;
+  margin: 10rpx 0 0 30rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-right {
+  width: auto;
+  height: auto;
+  padding: 91rpx 0 0;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.g-kthy-box .m-kthy-right .u-right-label {
+  width: auto;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+}
+
+.g-kthy-box .m-kthy-right .u-right-label .u-t1 {
+  width: 155rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  margin: 25rpx 0 0 0;
+  background: #ff2741;
+  border-radius: 44rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-right .u-right-label .u-icon {
+  width: 0;
+  height: 0;
+  border-left: 9rpx solid transparent;
+  border-right: 9rpx solid transparent;
+  border-top: 9rpx solid #ff2741;
+  margin: 0 0 0 116rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-right .u-right-radio {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.g-kthy-box .m-kthy-right .u-right-radio .u-t1 {
+  width: auto;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #1d1d1d;
+  margin: 0 20rpx;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-kthy-box .m-kthy-right .u-right-radio .u-radio {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #eee;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin: 0 30rpx 0 0;
+}
+
+.g-kthy-box .m-kthy-right .u-right-radio .u-radio.f-hover {
+  border-color: #ff2741;
+}
+
+.g-kthy-box .m-kthy-right .u-right-radio .u-radio.f-hover::after {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  background: #ff2741;
+  border-radius: 100%;
+  margin: 8rpx auto;
+  display: block;
+  overflow: hidden;
+}
+
+/*用户信息*/
+
+.g-user-msg {
+  width: 100%;
+  height: auto;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: block;
+  overflow: hidden;
+  margin: 24rpx 0 0;
+}
+
+.g-user-msg .m-user-cont {
+  width: 100%;
+  height: 102rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  border-bottom: 2rpx solid #f4f4f4;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.g-user-msg .m-user-cont .u-t1 {
+  display: block;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.g-user-msg .m-user-cont .u-t2 {
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  text-align: right;
+}
+
+.g-user-msg .m-user-cont .u-t2 .u-radio {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #eee;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin: 28rpx 0 0 0;
+  float: right;
+}
+
+.g-user-msg .m-user-cont .u-t2 .u-radio.f-hover {
+  border-color: #ff2741;
+}
+
+.g-user-msg .m-user-cont .u-t2 .u-radio.f-hover::after {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  background: #ff2741;
+  border-radius: 100%;
+  margin: 8rpx auto;
+  display: block;
+  overflow: hidden;
+}
+
+/*底部按钮*/
+
+.g-foot-buy {
+  width: 100%;
+  height: 95rpx;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #fff;
+}
+
+.g-foot-buy .u-view {
+  width: auto;
+  height: 95rpx;
+  border-top: 1px solid #f4f4f4;
+  display: block;
+  overflow: hidden;
+}
+
+.g-foot-buy .u-view {
+  width: auto;
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+  margin: 0 0 0;
+  display: block;
+  overflow: hidden;
+  flex: 1;
+}
+
+.g-foot-buy .u-view text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #ff2740;
+}
+
+.g-foot-buy .u-buy-btn {
+  width: auto;
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  background: #ff2741;
+  padding: 0 0 0;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  flex: 1;
+}
+
+/*提示弹窗*/
+
+.g-tips-eject {
+  
+}
+
+.g-tips-eject .m-tips-cont {
+  width: 540rpx;
+  height: auto;
+  background: #fff;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+  border-radius: 14rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+.g-tips-eject .m-tips-cont .u-h3 {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.g-tips-eject .m-tips-cont .u-p {
+  width: 100%;
+  height: auto;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  margin: 35rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-tips-eject .m-tips-cont .m-btn {
+  width: 100%;
+  height: auto;
+  margin: 45rpx 0 0;
+  padding: 0 47rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.g-tips-eject .m-tips-cont .m-btn view {
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 68rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  border: 2rpx solid #888;
+  border-radius: 44rpx;
+  display: block;
+  overflow: hidden;
+  margin: 0 18rpx;
+}
+
+.g-tips-eject .m-tips-cont .m-btn view:nth-child(2) {
+  background: #ff2741;
+  border-color: #ff2741;
+  color: #fff;
+}
+
+.g-tips-eject .u-tips-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+

@@ -1,0 +1,201 @@
+/* views/my/sub/order_detail.wxss */
+
+page {
+  background: #f3f5fb;
+  padding: 0 0 200rpx 0;
+}
+
+.g-white-box {
+  width: auto;
+  height: auto;
+  background: #fff;
+  padding: 0 30rpx;
+  margin: 30rpx 30rpx 0;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.u-h3 {
+  width: 100%;
+  height: 95rpx;
+  line-height: 94rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1rpx solid #f3f3f3;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.u-h3 .u-h3-t1 {
+  display: block;
+  overflow: hidden;
+}
+
+.u-h3 .u-h3-t2 {
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #f20f3d;
+  display: block;
+  overflow: hidden;
+  text-align: right;
+  -webkit-box-flex: 1;
+}
+
+.u-h4 {
+  width: 100%;
+  height: 38rpx;
+  line-height: 38rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #f20f3d;
+  display: block;
+  overflow: hidden;
+  padding: 11rpx 0;
+}
+
+.m-main-box {
+  width: 100%;
+  height: auto;
+  padding: 20rpx 0;
+  display: block;
+  overflow: hidden;
+}
+
+/*二维码*/
+
+.m-qr-img {
+  width: 256rpx;
+  height: 256rpx;
+  margin: 50rpx auto 0;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.m-qr-img .u-qr-img {
+  width: 256rpx;
+  height: 256rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.m-qr-img .u-qr-t1 {
+  width: 256rpx;
+  height: 256rpx;
+  line-height: 256rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #7f7f7f;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.u-qr-title {
+  width: 100%;
+  height: auto;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #5a5e64;
+  margin: 50rpx 0 0;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.u-qr-btn {
+  width: 140rpx;
+  height: 52rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #666;
+  text-align: center;
+  border: 1rpx solid #666;
+  margin: 25rpx auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 88rpx;
+}
+
+/*订单总价*/
+
+.m-case-money {
+  width: 100%;
+  height: auto;
+  padding: 11rpx 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.m-case-money .u-text-left {
+  width: 160rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #333;
+  display: block;
+  overflow: hidden;
+}
+
+.m-case-money .u-text-center {
+  width: auto;
+  height: auto;
+  line-height: 38rpx;
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #333;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.m-case-money .u-text-right {
+  width: 65rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 20rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  background: #ff2a44;
+  margin: 2rpx 0 0 30rpx;
+  border-radius: 8rpx;
+  display: block;
+  overflow: hidden;
+}
+
+/*订单金额*/
+
+.g-goods-money .m-case-money .u-text-left {
+  width: 270rpx;
+}
+
+.g-goods-money .m-case-money .u-text-center {
+  text-align: right;
+}
+
+/*核销码已使用*/
+
+.g-usered .m-case-money .u-text-left {
+  color: #999;
+}
+
+.g-usered .m-case-money .u-text-center {
+  color: #999;
+}

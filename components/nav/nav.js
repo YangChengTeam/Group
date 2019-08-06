@@ -4,9 +4,18 @@ Component({
    * 组件的属性列表
    */
   properties: {
+
+    delta: {
+      type: Number,
+      value: 1
+    },
     isback: {
       type: Number,
       value: 0
+    },
+    back_confirm_msg: {
+      type: String,
+      value: ''
     },
     issearch: {
       type: Number,
@@ -14,7 +23,7 @@ Component({
     },
     back_icon_path: {
       type: String,
-      value: 'back.png'
+      value: '../../images/icon-leftjt.png'
     },
     title: {
       type: String,
@@ -52,11 +61,26 @@ Component({
    */
   methods: {
     navigateBack(e) {
+      var that = this
       if (this.properties.path) {
         wx.redirectTo({
-            url: this.properties.path,
+          url: this.properties.path,
         })
       } else {
+        if (this.properties.back_confirm_msg) {
+          wx.showModal({
+            title: '提示',
+            content: this.properties.back_confirm_msg,
+            success: (res) => {
+              if (res.confirm) {
+                wx.navigateBack({
+                  delta: that.data.delta
+                })
+              }
+            }
+          })
+          return
+        }
         wx.navigateBack({
 
         })

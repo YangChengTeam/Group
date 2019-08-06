@@ -1,0 +1,38 @@
+<!--views/my/rank.wxml-->
+<nav opacity="{{navOpacity}}"  isnop="{{0}}" background="{{basicConfig.backgroundColor}}" background="#fff" color="#fff" isback="1" title="达人排行榜" back_icon_path="../../images/icon-leftjt1.png"></nav>
+<image src='images/bg-3.png' class='u-top-bg'></image>
+<view class='g-user-box'>
+  <text class='u-user-rank'>{{info.user_info.my_ranking||"暂无排名" }}</text>
+  <image src='{{userInfo.face}}'></image>
+  <text class='u-user-name'>{{userInfo.nick_name}}</text>
+  <view class='u-user-income'>
+    收入：<text>{{info.user_info.income|| "0.00"}}元</text>    
+  </view>
+</view>
+<view class='g-tab-top'>
+  <text class='u-h3'>前50名排行榜</text>
+  <view class='m-tab-btn'>
+    <view class='{{type == item.type?"f-hover":""}}' wx:for="{{typeInfos}}" wx:key="type" data-type="{{item.type}}" bindtap='select'>{{item.name}}</view>
+  </view>
+</view>
+<view class='g-list-box'>
+  <view class='m-list-top'>
+    <text class='u-list-rank'>排行</text>
+    <text class='u-list-id'>用户ID</text>
+    <text class='u-list-income'>收入金额</text>
+  </view>
+  <view class='m-list-cont' wx:for="{{info.list}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+    <view class='u-user-rank'>
+      <image src='images/icon-rank-{{idx+1}}.png'></image>
+      <text>{{idx+1}}</text>
+    </view>
+    <view class='u-user-msg'>
+      <image src='{{item.face}}'></image>
+      <text>{{item.nick_name}}</text>
+    </view>
+    <text class='u-user-income'>{{item.money}}元</text>
+  </view>
+</view>
+<statusview status="{{status}}"></statusview>
+
+

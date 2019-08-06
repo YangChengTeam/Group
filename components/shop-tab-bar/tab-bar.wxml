@@ -1,0 +1,16 @@
+<!--components/shop-tab-bar/tab-bar.wxml-->
+<view style='height: 48px; width:750rpx; '></view>
+<view class='g-foot-box'>
+  <view class='{{currentIndex==0?"f-hover":""}}' bindtap='nav2index' data-index='0'>
+    <image src='../../images/icon-1{{currentIndex==0?"-hover":""}}.png'></image>
+    <text>首页</text>
+  </view>
+  <view class='{{currentIndex==1?"f-hover":""}}' bindtap='nav2index' data-index='1'>
+    <image src='../../images/icon-2{{currentIndex==1?"-hover":""}}.png'></image>
+    <text>个人店铺</text>
+  </view>
+  <view class='{{currentIndex==2?"f-hover":""}}' bindtap='nav2index' data-index='2'>
+    <image src='../../images/icon-3{{currentIndex==2?"-hover":""}}.png'></image>
+    <text>商品</text>
+  </view>
+</view>

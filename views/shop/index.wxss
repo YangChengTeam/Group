@@ -1,1 +1,311 @@
 /* views/shop/index.wxss */
+
+page {
+  background: #fff;
+}
+
+.u-top-bg {
+  width: 750rpx;
+  height: 373rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.g-top {
+  width: 100%;
+  height: 259rpx;
+  padding: 22rpx 30rpx 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  overflow: hidden;
+  position: relative;
+  zoom: 1;
+}
+
+.g-top .u-face {
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 100%;
+  border: 6rpx solid #fff;
+  display: block;
+  overflow: hidden;
+}
+
+.g-top .m-msg {
+  width: auto;
+  height: auto;
+  margin: 0 0 0 30rpx;
+  -webkit-box-flex: 1;
+  display: block;
+  overflow: hidden;
+}
+
+.g-top .m-msg .m-name {
+  width: 100%;
+  height: auto;
+  margin: 25rpx 0 0 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-top .m-msg .m-name .u-name {
+  width: auto;
+  height: 38rpx;
+  line-height: 38rpx;
+  font-size: 36rpx;
+  font-weight: normal;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+}
+
+.g-top .m-msg .m-name .u-rank {
+  width: auto;
+  height: 38rpx;
+  line-height: 38rpx;
+  margin: 0 0 0 20rpx;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #ffd05c, #ffae27);
+  border-radius: 33rpx;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.g-top .m-msg .m-name .u-rank image {
+  width: 17rpx;
+  height: 21rpx;
+  margin: 10rpx 10rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-top .m-msg .m-name .u-rank text {
+  width: auto;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-top .m-msg .u-look {
+  width: 100%;
+  height: 26rpx;
+  line-height: 26rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #fff;
+  margin: 20rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-top .m-msg .u-look-face {
+  width: 100%;
+  height: 44rpx;
+  display: block;
+  overflow: hidden;
+  margin: 30rpx 0 0;
+  position: relative;
+}
+
+.g-top .m-msg .u-look-face image {
+  width: 44rpx;
+  height: 44rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #fff;
+  border-radius: 100%;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.g-top .m-msg .u-look-face image:nth-child(2) {
+  left: 36rpx;
+  z-index: 2;
+}
+
+.g-top .m-msg .u-look-face image:nth-child(3) {
+  left: 72rpx;
+  z-index: 1;
+}
+
+.g-title {
+  width: 100%;
+  height: auto;
+  margin: 60rpx 0 0;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.g-title .m-text {
+  width: auto;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #333;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.g-title .m-text .u-icon-1 {
+  width: 38rpx;
+  height: 28rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 3rpx;
+}
+
+.g-title .m-text .u-icon-2 {
+  width: 38rpx;
+  height: 28rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 3rpx;
+}
+
+.m-cont {
+  width: 690rpx;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  margin: 48rpx auto 0;
+}
+
+.m-cont .m-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 18rpx;
+}
+
+.m-cont .m-img .u-img {
+  width: 100%;
+  height: 391rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont .m-img .u-not-img {
+  display: none;
+}
+
+.m-cont .m-img text {
+  width: auto;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #fff;
+  padding: 0 14rpx;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8rpx 0 0 0;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+.m-cont .u-title {
+  width: 100%;
+  height: auto;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #333;
+  margin: 20rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont .u-buy {
+  width: 100%;
+  height: 56rpx;
+  line-height: 56rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 20rpx 0 0;
+}
+
+.m-cont .u-buy .u-money-1 {
+  width: auto;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ff2741;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont .u-buy .u-money-2 {
+  width: auto;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #d0d0d0;
+  text-decoration: line-through;
+  margin: 0 0 0 20rpx;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.m-cont .u-buy .u-btn {
+  width: 140rpx;
+  height: 56rpx;
+  background: #ff2742;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  border-radius: 8rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.m-not .u-buy .u-btn {
+  background: #a7a7a7;
+}
+
+.m-not .m-img .u-not-img {
+  width: 100%;
+  height: 391rpx;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.m-not .m-img .u-not-img image {
+  width: 211rpx;
+  height: 177rpx;
+  margin: 108rpx auto 0;
+  display: block;
+  overflow: hidden;
+}

@@ -1,62 +1,73 @@
 // views/card/index.js
 // 会员卡首页
+const regeneratorRuntime = global.regeneratorRuntime = require('../../libs/runtime')
+const app = getApp()
 
-Page({
+const InfoPage = require('../../base/info_page.js')
+InfoPage({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    code: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.path = "/user/card/memberCardInfo"
+      this.params = {
+        card_id: app.userInfo.card.cardinfo.card_id
+      }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  nav2pay(e){
+     wx.navigateTo({
+       url: '/views/card/pay',
+     })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  show_code_dialog(e) {
+    this.setData({
+      show: 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  cancel() {
+    this.setData({
+      show: 0
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  inputCode(e) {
+    this.data.code = e.detail.value
+    console.log(this.data.code)
   },
+  submitCode(e) {
+    var that = this
+    var options = {}
+    options.path = "/user/card/bindCardExchange"
+    options.params = {
+      code: this.data.code
+    }
+    options.success = function (info) {
+      
+      wx.showToast({
+        title: '激活成功',
+      })
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+      wx.navigateBack({
 
-  },
+      })
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
+      that.refreshData() 
+    }
 
+    options.fail = function (msg) {
+      wx.showToast({
+        title: msg || "激活失败，请重试",
+        icon: "none"
+      })
+    }
+    this.request(options)
   },
 
   /**

@@ -1,0 +1,17 @@
+<!--views/my/sub/point_record.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="积分兑换记录"></nav>
+
+<view class='g-white-box'  wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+  <view class='m-left'>
+    <text class='u-t1'>{{item.desp}}</text>
+    <text class='u-t2'>{{item.add_time}}</text>
+  </view>
+  <view class='m-right'>
+    -{{item.point}}
+  </view>
+</view>
+<statusview status="{{status}}"></statusview>
+
+
+
+

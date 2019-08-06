@@ -1,0 +1,96 @@
+<!--views/card/pay.wxml-->
+<nav  isnop="{{0}}" background="#fff" isback="1" title="超级粉丝卡" ></nav>
+
+<view class='m-card-box'>
+  <view class='m-top'>
+    超级粉丝卡<text>已加入会员{{currentCardInfo.card_num}}人</text>
+  </view>
+  <view class='m-bottom'>
+    <image src='{{userInfo.face}}'></image>
+    <view>
+      <text class='u-name'>{{userInfo.nick_name}}</text>
+      <text class='u-label'>享受超低会员价！</text>
+    </view>
+  </view>
+  <image src='images/card-bg-1.png' class='u-bg'></image>
+</view>
+<view class='g-choose-box'>
+  <view class='u-h3'>
+    <text class='u-icon'></text>
+    <text class='u-font'>选择会员</text>
+  </view>
+  <view class='m-choose-cont{{currentCardIndex==idx ? " f-hover": ""}}' wx:for="{{info}}" wx:for-index="idx" wx:for-item="item" wx:key="*this" bindtap='selectCard' data-index="{{idx}}">
+    <view class='m-left'>
+      <text class='u-t1'>{{item.name}}</text>
+      <text class='u-t2'>享受会员价消费</text>
+      <text class='u-t3'>有效期:{{item.valid_msg}}</text>
+    </view>
+    <view class='m-right'>
+      <text class='u-t1'>￥{{item.price}}</text>
+      <text class='u-t2'>￥{{item.market_price}}</text>
+    </view>
+    <image src='images/hover-icon-1.png' class='u-hover'></image> 
+  </view>
+</view>
+<view class='u-btn' bindtap='submit'>立即开通</view>
+<view class='u-tips'>若有会员激活码，请输入<text bindtap='show_code_dialog'>激活码</text></view>
+<view class='g-hyqx-box'>
+  <view class='u-h3'>
+    <text class='u-icon'></text>
+    <text class='u-font'>选择会员</text>
+  </view>
+  <view class='m-cont-box'>
+    <view class='m-cont'>
+      <image src='images/icon-19.png' class='u-icon-1'></image>
+      <text class='u-t1'>专属经验</text>
+      <text class='u-t2'>仅超级粉丝卡享有</text>
+    </view>
+    <view class='m-cont'>
+      <image src='images/icon-20.png' class='u-icon-1'></image>
+      <text class='u-t1'>折上折</text>
+      <text class='u-t2'>商品折扣更优惠</text>
+    </view>
+    <view class='m-cont'>
+      <image src='images/icon-21.png' class='u-icon-1'></image>
+      <text class='u-t1'>积分返享</text>
+      <text class='u-t2'>消费返还更多积分</text>
+    </view>
+    <view class='m-cont'>
+      <image src='images/icon-22.png' class='u-icon-1'></image>
+      <text class='u-t1'>专属标志</text>
+      <text class='u-t2'>彰显个人尊贵权益</text>
+    </view>
+    <view class='m-cont'>
+      <image src='images/icon-23.png' class='u-icon-1'></image>
+      <text class='u-t1'>福  利</text>
+      <text class='u-t2'>活动好处惊喜不断</text>
+    </view>
+    <view class='m-cont'>
+      <image src='images/icon-24.png' class='u-icon-1'></image>
+      <text class='u-t1'>专属商品</text>
+      <text class='u-t2'>金超级粉丝卡享有</text>
+    </view>
+  </view>
+</view>
+<dialog show="{{show}}">
+  <view class='g-code-box'>
+    <view class='m-code-cont'>
+      <text class='u-h3'>激活卡</text>
+      <input value='' placeholder='请输入激活码'  bindinput='inputCode'></input>
+      <view class='m-code-btn'>
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='submitCode'>确定</view>
+      </view>
+    </view>
+    <view class='u-bg'></view>
+  </view>
+</dialog>
+
+
+
+
+
+
+
+
+

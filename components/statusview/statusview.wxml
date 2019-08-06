@@ -1,0 +1,7 @@
+<!--components/statusview/statusview.wxml-->
+
+<view class='u-loading' bindtap='loadList' wx:if="{{status!=3}}"><image src='loading2.gif' wx:if="{{status==0}}" />{{status==0 ? "正在加载..." : ""}}{{status==1 ? "" : ""}}{{status==2 ? "已经到底啦~" : ""}}{{status==3 ? "—暂时没有信息哦—~" : ""}}{{status==-1 ? "网络错误，请重试~" : ""}}
+</view>
+<view class='u-loading2' bindtap='loadList' wx:elif="{{status==3}}">
+<image src='not-img-1.png'></image>
+</view>

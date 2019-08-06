@@ -1,0 +1,40 @@
+<!--views/my/red_envelope.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="我的红包"></nav>
+
+<view class='g-user-box'>
+  <image src='{{userInfo.face}}' class='u-user-img'></image>
+  <text class='u-user-name'>{{userInfo.nick_name}}</text>
+  <text class='u-user-msg'>红包：{{userInfo.hongbao_num}}个     |     积分：{{userInfo.point}}分</text>
+  <text class='u-dhhb-btn' bindtap='exchange'>兑换红包</text>
+</view>
+<view class='g-use-tab'>
+  <view class='{{currentIndex==0?"f-hover" : ""}}'>
+    <text bindtap='selectTab' data-index="0">未使用({{info.unuse_count}})</text>
+  </view>
+  <view class='{{currentIndex==1?"f-hover" : ""}}'>
+    <text bindtap='selectTab' data-index="1">已使用({{info.use_count}})</text>
+  </view>
+</view>
+<view class='g-roll-box'>
+  <view class='m-roll-cont' bindtap='nav2detail' data-item='{{item}}' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+    <view class='m-cont'>
+      <view class='m-left'>
+        <view class='m-left-top'>
+          <text class='u-t1'>{{item.limit_type_str}}</text>
+          <text class='u-t2'>有效期至{{item.valid_data}}({{item.diff_time<=0?"已过期":""}})</text>
+        </view>
+        <text class='m-left-bottom'>{{item.hongbao_name}}</text>
+      </view>
+      <view class='m-right'>
+        <view class='m-right-top'>
+          ¥
+          <text>{{item.money}}</text>
+        </view>
+        <image src='images/btn-1.png' class='m-right-bottom'></image>
+      </view>
+    </view>
+    <image src='images/roll-bg-{{idx%3 + 1}}.png' class='u-roll-bg'></image>
+  </view>
+  <statusview status="{{status}}"></statusview>
+</view>
+

@@ -1,0 +1,27 @@
+<!--views/shop/search.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="推广记录"></nav>
+
+<view class='g-search-box'>
+  <view class='m-search-input'>
+    <image src='/images/me/icon-2.png'></image>
+    <input placeholder='请输入需要搜索的商品' bindinput='input'></input>
+  </view>
+  <text class='u-search-btn' bindtap='search'>搜索</text>
+</view>
+<view class='g-list' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="id" data-item="{{item}}" bindtap="nav2detail">
+  <image src='{{item.img_show}}' class='u-img'></image>
+  <view class='m-cont-right'>
+    <text class='u-title'>{{item.name}}</text>
+    <text class='u-label'><text>赚￥{{item.price}}</text></text>
+    <view class='m-cont-foot'>
+      <text>￥9.90</text>
+      <view class='u-btn-1' data-item="{{item}}" catchtap='genposter'>生成海报</view>
+      <view class='u-btn-2' data-item="{{item}}" catchtap='nav2promotion_content'>推广内容</view>
+    </view>
+  </view>
+</view>
+<statusview status="{{status}}"></statusview>
+<tab-bar index="2"></tab-bar>
+
+
+

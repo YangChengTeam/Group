@@ -1,0 +1,202 @@
+/* views/withdraw/index.wxss */
+
+page {
+  background: #fff;
+}
+
+.u-top-bg {
+  width: 750rpx;
+  height: 414rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.g-top {
+  width: 100%;
+  height: 300rpx;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.g-top .u-title {
+  width: 100%;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  margin: 50rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-top .u-money {
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 104rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  margin: 33rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-white-box {
+  width: 100%;
+  height: auto;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e8e8e8;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.m-cont image {
+  width: 35rpx;
+  height: 28rpx;
+  margin: 36rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont .u-t1 {
+  width: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #333;
+  margin: 0 20rpx;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.m-cont .u-t2 {
+  width: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #333;
+  margin: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont image.u-icon-4 {
+  width: 36rpx;
+  height: 40rpx;
+  margin: 32rpx 0 0;
+}
+
+.m-cont .u-icon-jiantou {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #a4a4a4;
+  border-right: 4rpx solid #a4a4a4;
+  transform: rotate(45deg);
+  display: block;
+  overflow: hidden;
+  margin: 38rpx 10rpx 0 0;
+}
+
+.g-tab-btn {
+  width: 100%;
+  height: 110rpx;
+  background: #eff1f6;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.g-tab-btn view {
+  width: 175rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  background: #ff2c46;
+  border-radius: 44rpx;
+  margin: 19rpx 15rpx 0;
+  display: inline-block;
+  overflow: hidden;
+  box-shadow: 0px 5rpx 7rpx #f88697;
+}
+
+.g-tab-btn view:nth-child(2) {
+  background: #fff;
+  box-shadow: none;
+  color: #333;
+}
+
+.m-cont-list {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e8e8e8;
+  display: -webkit-box;
+  overflow: hidden;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+}
+
+.m-cont-list .m-left {
+  width: auto;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.m-cont-list .m-left text {
+  width: 100%;
+  height: auto;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #333;
+  display: block;
+  overflow: hidden;
+}
+
+.m-cont-list .m-left text:nth-child(2) {
+  font-size: 22rpx;
+  font-weight: normal;
+  color: #939497;
+  margin: 10rpx 0 0;
+}
+
+.m-cont-list .m-right {
+  width: auto;
+  height: auto;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #2c3035;
+  display: block;
+  overflow: hidden;
+}
+
+.m-not-cont {
+  width: 330rpx;
+  height: 299rpx;
+  display: block;
+  overflow: hidden;
+  margin: 80rpx auto;
+}

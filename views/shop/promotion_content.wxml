@@ -1,0 +1,16 @@
+<!--views/shop/promotion_content.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="推广内容"></nav>
+
+<view class='g-list-box'>
+  <view class='m-cont' catchtap='chooseImg' data-item="{{item}}" wx:for="{{imgs}}" wx:key="id">
+    <image src='{{item.img}}'></image>
+    <view class='u-hover' wx:if="{{item.isselect == 1}}"></view>
+  </view>
+</view>
+<view class='g-foot-btn'>
+  <view class='u-save' catchtap='save' wx:if="{{saving==0}}">批量保存图片</view>
+  <block wx:else>
+    <view class='u-cancel' catchtap='cancel'>取消选择</view>
+    <view class='u-save' catchtap='save2Album'>保存图片至相册</view>
+  </block>
+</view>

@@ -1,2 +1,52 @@
 <!--views/shop/index.wxml-->
-<text>views/shop/index.wxml</text>
+<nav opacity="{{navOpacity}}" isnop="{{0}}" background="#ff2742" isback="1" title="武汉团购" color="#fff" back_icon_path='../../images/icon-leftjt1.png'></nav>
+
+<loading wx:if="{{loading}}"></loading>
+<block wx:if="{{!loading}}">
+<image src='images/bg.png' class='u-top-bg'></image>
+<view class='g-top'>
+  <image src='{{userInfo.face}}' class='u-face'></image>
+  <view class='m-msg'>
+    <view class='m-name'>
+      <text class='u-name'>{{userInfo.nick_name}}</text>
+      <view class='u-rank'>
+        <image src='images/icon-1.png'></image>
+        <text>目前排名 37</text>
+      </view>
+    </view>
+    <text class='u-look'>3位 好友浏览过</text>
+    <view class='u-look-face'>
+        <image src='images/img.png'></image>
+        <image src='images/img.png'></image>
+        <image src='images/img.png'></image>
+    </view>
+  </view>
+</view>
+<view class='g-title'>
+  <view class='m-text'>
+    <image src='images/title-icon-1.png' class='u-icon-1'></image>
+    <text>精选推荐</text>
+    <image src='images/title-icon-2.png' class='u-icon-2'></image>
+  </view>
+</view>
+
+<view class='m-cont{{item.sale_num>=item.stock_num?" m-not": ""}}' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="id" data-item="{{item}}" bindtap="nav2detail">
+  <view class='m-img'>
+    <view class='u-not-img' wx:if="{{item.sale_num >= item.stock_num}}">
+        <image src='images/img-1.png'></image>
+    </view>
+    <image src='{{item.img_show}}' class='u-img'></image>
+    <text>{{item.sale_num}}件已售</text>
+  </view>
+  <text class='u-title'>{{item.name}}</text>
+  <view class='u-buy'>
+    <text class='u-money-1'>￥{{item.price}}</text>
+    <text class='u-money-2'>￥{{item.market_price}}</text>
+    <view class='u-btn'>{{item.sale_num>=item.stock_num ? "已售罄": "立即购买"}}</view>
+  </view>
+</view>
+<statusview status="{{status}}"></statusview>
+<tab-bar index="1"></tab-bar>
+</block>
+
+

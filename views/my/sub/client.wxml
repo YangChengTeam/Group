@@ -1,0 +1,16 @@
+<!--views/my/client.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="我的客户"></nav>
+<view class='g-white-box'>
+  <view class='m-cont' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+    <image src='{{item.face}}' class='u-face'></image>
+    <view class='m-cont-right'>
+      <view class='m-msg'>
+        <text class='u-name'>{{item.nick_name}}</text>
+        <text class='u-date'>{{item.customer_start_time}}</text>
+      </view>
+      <view class='u-labei'>已绑定</view>
+    </view>
+  </view>
+</view>
+<statusview status="{{status}}"></statusview>
+

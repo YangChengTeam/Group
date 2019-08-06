@@ -1,0 +1,63 @@
+1.商务云后台
+	http://www.shop.m/ycadmin/
+	admin
+	123456
+
+
+2.商家平台后台
+	http://www.shop.m/yc/
+
+
+3.svn地址：svn://192.168.80.10/shop
+
+
+
+4.任务分配
+
+	刘奇
+		1.设置
+		2.微信
+		3.推送
+
+	
+	殷 星
+		1.商品
+		2.商家
+		3.订单
+		4.数据
+
+
+
+	吴伟
+		1.用户
+		2.会员卡
+		3.营销（营销插件暂不做）
+		
+
+
+
+5.返回数据格式：参考http://api.6071.com/index3/login?is_dump=1
+
+
+
+6.
+
+["info"] => array(29) {
+    ["id"]   => 1
+    ["商品"]   => "商品1"
+    ...
+    ...
+    ...
+	
+    ["gift"] => array(14) {
+    	["key1"] => string(1) "value1"
+      	["key2"] => string(6) "value2"
+    }
+    ["kf"] => array(14) {
+      	["key1"] => string(1) "value1"
+      	["key2"] => string(6) "value2"
+    }
+    ...
+    ...
+    ...
+}

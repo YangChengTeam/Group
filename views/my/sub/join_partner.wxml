@@ -1,0 +1,35 @@
+<!--views/my/join_partner.wxml-->
+<nav  isnop="{{0}}" background="#fff" isback="1" title="合伙人招募" ></nav>
+<image src='images/bg-4.png' class='u-top-bg' style='top: {{totalTopHeight}}px;'></image>
+<view class='g-cont-box'>
+  <view class='m-cont-1' wx:if="{{!isSubmit}}">
+    <text class='u-h3'>招募人信息</text>
+    <input placeholder='请填写姓名' value='' bindinput='inputName'></input>
+    <input placeholder='请填写手机号码' value='' bindinput='inputPhone'></input>
+  </view>
+  <view class='m-cont-2' wx:if="{{isSubmit}}">
+    <image src='images/icon-6.png' class='u-img'></image>
+    <text class='u-h3'>您的申请资料已提交</text>
+    <view class='u-h4'>
+      <text>添加客服咨询，玩转合伙人晋升之路</text>
+      <image src='images/icon-7.png' bindtap='getWx'></image>
+    </view>
+  </view>
+  <view class='u-btn' bindtap='submit'>{{isSubmit?"返回个人中心":"提交表单"}}</view>
+</view>
+<view class='g-tips-box'>
+  <text class='u-h4'>加入合伙人须知</text>
+  <text class='u-p'>
+    1.请填写有效的身份信息（姓名、手机账号），确保信息的真实性。
+    2.提交信息后，管理员会及时审核，请耐心等待。
+  </text>
+</view>
+
+
+
+
+
+
+
+
+

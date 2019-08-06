@@ -1,0 +1,66 @@
+<!--views/my/sub/order_pay.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="支付"></nav>
+
+<view class='g-time-box'>
+  <text class='u-t1'>支付剩余时间</text>
+  <text class='u-t2'>{{countdownStr}}</text>
+</view>
+<view class='g-goods-msg'>
+  <image src='/images/img.png'></image>
+  <view class='m-right'>
+    <text class='u-t1'>{{info.info.orders_name}}</text>
+    <view class='u-t2'>￥{{info.info.orders_money}}
+      <!-- <text>￥{{info.info.orders_money}}</text> -->
+    </view>
+  </view>
+</view>
+<view class='g-buysize-box'>
+  <text class='u-h3'>购买数量</text>
+  <view class='m-buy-edit'>
+    <text class='u-buy-min'>-</text>
+    <text class='u-buy-size'>{{info.info.orders_goods_num}}</text>
+    <text class='u-buy-max'>+</text>
+  </view>
+</view>
+<view class='g-hbyb-box'>
+  <text class='u-h3'>红包优惠</text>
+  <text class='u-label'>￥{{info.info.hongbao_money}}</text>
+</view>
+<view class='g-hbyb-box g-hbyb-box2'>
+  <text class='u-h3'>余额抵扣</text>
+  <text class='u-label'>￥{{info.info.founder_money}}</text>
+</view>
+<view class='g-user-msg'>
+  <view class='m-user-cont'>
+    <text class='u-t1'>姓名</text>
+    <text class='u-t2'>{{info.info.buyer_name}}</text>
+  </view>
+  <view class='m-user-cont'>
+    <text class='u-t1'>手机</text>
+    <text class='u-t2'>{{info.info.buyer_mobile}}</text>
+  </view>
+</view>
+
+<view class='g-foot-buy'>
+  <view class='u-view'>
+    合计：
+    <text>￥{{info.info.rmb_money}}</text>
+  </view>
+  <view class='u-buy-btn' bindtap='show_pay_dialog'>
+    立即购买
+  </view>
+</view>
+
+<dialog show="{{show}}">
+  <view class='g-tips-eject'>
+    <view class='m-tips-cont'>
+      <text class='u-h3'>订单支付</text>
+      <text class='u-p'>您确定已支付订单吗？
+        若未支付请立即付款购买哦！</text>
+      <view class='m-btn'>
+        <view bindtap='payd'>我已支付</view>
+        <view bindtap='pay'>立即支付</view>
+      </view>
+    </view>
+  </view>
+</dialog>

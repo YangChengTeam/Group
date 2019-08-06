@@ -1,0 +1,8 @@
+<!--views/withdraw/withdraw.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="提现"></nav>
+
+<view class='g-box'>
+  <text>提现金额</text>
+  <text>¥{{userInfo.assets.draw}}</text>
+</view>
+<view class='m-submit-btn' bindtap='submit'>提交</view>

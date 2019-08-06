@@ -1,0 +1,9 @@
+<!--components/category.wxml-->
+<view class="category">
+    <view class="category-wrapper">
+         <view class="category-item" wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="*this" bindtap='nav2path' data-path="{{item.path}}">
+            <image class="category-img" src='{{item.img}}'></image>
+            <view class="category-title">{{item.name}}</view>
+         </view>
+    </view>
+</view>

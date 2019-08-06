@@ -1,8 +1,11 @@
 <!--index.wxml-->
 <nav opacity="{{navOpacity}}" isnop="{{1}}" background="{{basicConfig.backgroundColor}}" isback="0" issearch="1" title="武汉团购" color=""></nav>
 <banner list="{{bannerList}}"></banner>
-<banner list="{{bannerList}}"></banner>
-<banner list="{{bannerList}}"></banner>
-<banner list="{{bannerList}}"></banner>
-<view style='height: 48px; width:750rpx; '>
-</view>
+<block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+   <category list="{{categoryList}}" wx:if="{{item.type== viewtype[0] }}"></category>
+   <ad wx:if="{{item.type== viewtype[1] }}" mode="{{item.mode}}"></ad>
+   <list wx:if="{{item.type== viewtype[2] }}" mode="{{item.mode}}"></list>
+   <activity wx:if="{{item.type== viewtype[3] }}" mode="{{item.mode}}"></activity>
+</block>
+<view style='height: 48px; width:750rpx; '></view>
+

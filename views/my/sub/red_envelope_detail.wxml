@@ -1,0 +1,44 @@
+<!--views/my/sub/red_envelope_detail.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="红包详情"></nav>
+
+<image class="u-top-bg" src='images/bg-6.png' /> 
+<view class='g-hongbao-box'>
+  <view class='m-hg-cont'>
+    <text class='u-h1'>{{info.limit_type_str}}</text>
+    <text class='u-h2'>{{info.hongbao_name}}</text>
+    <view class='u-money'>
+      <text>{{info.money}}</text>元
+    </view>
+    <view class='m-time'>
+      <text class='u-t1'>{{time.day}}</text>
+      <text class='u-t2'>天</text>
+      <text class='u-t1'>{{time.hour}}</text>
+      <text class='u-t2'>:</text>
+      <text class='u-t1'>{{time.minute}}</text>
+      <text class='u-t2'>:</text>
+      <text class='u-t1'>{{time.second}}</text>
+      <text class='u-t3'>红包即将过去，赶紧使用哦！</text>
+    </view>
+    <view class='u-btn' bindtap='back'>查看更多红包</view>
+  </view>
+  <image src='images/bg-7.png' class='u-bg'></image>
+</view>
+<view class='g-title'>
+  <view class='m-text'>
+    <image src='images/title-icon-1.png' class='u-icon-1'></image>
+    <text>好物甄选</text>
+    <image src='images/title-icon-2.png' class='u-icon-2'></image>
+  </view>
+</view>
+<view class='g-list-box'>
+  <view class='m-cont'  bindtap='nav2detail' data-item='{{item}}' wx:for="{{info.goods_list}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+    <view class='m-img'>
+      <image src='{{item.img_show}}' class='u-img'></image>
+    </view>
+    <text class='u-title'>{{item.name}}</text>
+    <view class='u-buy'>
+      <text class='u-money-1'>￥{{item.price}}</text>
+      <text class='u-money-2'>￥{{item.market_price}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--components/list/list.wxml-->
+<list1 wx:if="{{mode==1}}"></list1>
+<list2 wx:if="{{mode==2}}"></list2>
+<list3 wx:if="{{mode==3}}"></list3>
+<list4 wx:if="{{mode==4}}"></list4>
+<list5 wx:if="{{mode==5}}"></list5>
+<list6 wx:if="{{mode==6}}"></list6>
+<list7 wx:if="{{mode==7}}"></list7>
+<list8 wx:if="{{mode==8}}"></list8>

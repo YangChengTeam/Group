@@ -11,15 +11,23 @@
    z-index: 2;
 }
 
-.nav-back {
-   width: 34rpx;
-   height: 34rpx;
-   margin-left: 20rpx;
+.nav-back-wrapper {
+   width: 60rpx;
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
    margin-top:2rpx;
 }
 
+.nav-back {
+   width: 18rpx;
+   height: 36rpx;   
+}
+
 .nav-title {
-   margin-left: 20rpx;
+   margin-left: 16rpx;
 }
 
 .nav-search {

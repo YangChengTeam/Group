@@ -1,0 +1,41 @@
+<!--views/my/sub/exchange_red_envelope.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="兑换红包"></nav>
+
+<view class='g-user-box' bindtap='nav2record'>
+  <image src='{{userInfo.face}}' class='u-user-img'></image>
+  <text class='u-user-name'>{{userInfo.nick_name}}</text>
+  <view class='m-user-score'>
+    <text class='u-t1'>我的积分</text>
+    <text class='u-t2'>{{userInfo.point}}</text>
+  </view>
+  <view class='u-user-icon'></view>
+</view>
+<view class='g-roll-box'>
+  <view class='m-roll-cont' wx:for="{{info}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+    <view class='m-cont'>
+      <view class='m-left'>
+        <text class='m-left-top'>{{item.name}}</text>
+        <view class='m-left-bottom'>
+          <text class='u-t1'>{{item.exchange_point}}积分</text>
+          <text class='u-t2'>{{item.limit_type_str}}</text>
+        </view>
+      </view>
+      <view class='m-right'>
+        <view class='m-right-top'>
+          ¥<text>{{item.fix_money_str}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='m-cont-bottom'>
+      <text class='u-date'>有效期至2019-06-06</text>
+      <view class='u-btn' data-item="{{item}}" catchtap='exchange'>立即兑换</view>
+    </view>
+    <image src='images/my/roll-bg-4.png' class='u-roll-bg'></image>
+  </view>
+</view>
+<view class='g-btn-box'>
+  <view bindtap='back'>返回</view>
+</view>
+
+
+

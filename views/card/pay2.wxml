@@ -1,0 +1,33 @@
+<!--views/card/pay2.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="我的客户"></nav>
+
+<view class='g-white-box'>
+  <view class='m-choose-cont f-hover'>
+    <view class='m-left'>
+      <text class='u-t1'>{{info.name}}</text>
+      <text class='u-t2'>有效期：{{info.valid_msg}}</text>
+    </view>
+    <view class='m-right'>
+      <text class='u-t1'>￥{{info.price}}</text>
+      <text class='u-t2'>￥{{info.market_price}}</text>
+    </view>
+    <view class='m-bottom'>
+      <text class='u-label'>享</text>
+      <text class='u-t'>会员价购买商品</text>
+    </view>
+    <image src='/images/me/hover-icon-1.png' class='u-hover'></image> 
+  </view>
+  <view class='g-tips'>
+    注：该卡一经出售，概不退换
+  </view>
+</view>
+<view class='g-btn-box'>
+  <view bindtap='submit'>确认支付</view>
+</view>
+
+
+
+
+
+
+

@@ -1,0 +1,271 @@
+/* views/my/rank.wxss */
+
+page {
+  background: #f3f5fb;
+  padding: 0;
+}
+
+.u-top-bg {
+  width: 750rpx;
+  height: 511rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.g-user-box {
+  width: 750rpx;
+  height: 128rpx;
+  background: #fff;
+  border-radius: 44rpx 44rpx 0 0;
+  padding: 38rpx 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 270rpx 0 0;
+  position: relative;
+  z-index: 5;
+}
+
+.g-user-box .u-user-rank {
+  width: auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #5a5e64;
+  display: block;
+  overflow: hidden;
+}
+
+.g-user-box image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+  display: block;
+  overflow: hidden;
+  margin: 0 20rpx 0 50rpx;
+}
+
+.g-user-box .u-user-name {
+  width: auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #2c3035;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-user-box .u-user-income {
+  width: auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #2c3035;
+  display: block;
+  overflow: hidden;
+}
+
+.g-user-box .u-user-income text {
+  color: #ff2741;
+}
+
+.g-tab-top {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  margin: 10rpx 0 0;
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.g-tab-top .u-h3 {
+  width: 100%;
+  height: auto;
+  line-height: 44rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #2c3035;
+  display: block;
+  overflow: hidden;
+}
+
+.g-tab-top .m-tab-btn {
+  width: 520rpx;
+  height: auto;
+  border: 2rpx solid #ff2741;
+  border-radius: 10rpx;
+  margin: 45rpx auto 0;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+}
+
+.g-tab-top .m-tab-btn view {
+  width: auto;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #ff2741;
+  text-align: center;
+  border-right: 2rpx solid #ff2741;
+  display: block;
+  overflow: hidden;
+  flex: 1;
+}
+
+.g-tab-top .m-tab-btn view:nth-last-child(1) {
+  border: 0;
+}
+
+.g-tab-top .m-tab-btn view.f-hover {
+  background: #ff2741;
+  color: #fff;
+}
+
+.g-list-box {
+  width: 100%;
+  height: auto;
+  padding: 40rpx 30rpx 0;
+  box-sizing: border-box;
+  background: #fff;
+  display: block;
+  overflow: hidden;
+}
+
+.g-list-box .m-list-top {
+  width: 100%;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #939497;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.g-list-box .m-list-top .u-list-rank {
+  width: 75rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-list-box .m-list-top .u-list-id {
+  width: auto;
+  margin: 0 60rpx;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-list-box .m-list-top .u-list-income {
+  width: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.g-list-box .m-list-cont {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #2c3035;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #f3f3f3;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.g-list-box .m-list-cont .u-user-rank {
+  width: 75rpx;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.g-list-box .m-list-cont .u-user-rank image {
+  width: 63rpx;
+  height: 47rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  margin: 6rpx auto 0;
+}
+
+.g-list-box .m-list-cont .u-user-rank text {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  margin: 6rpx 0 0;
+}
+
+.g-list-box .m-list-cont:nth-child(n+5) .u-user-rank image {
+  display: none;
+}
+
+.g-list-box .m-list-cont:nth-child(n+5) .u-user-rank text {
+  color: #333;
+}
+
+.g-list-box .m-list-cont .u-user-msg {
+  width: auto;
+  margin: 0 60rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-list-box .m-list-cont .u-user-msg image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.g-list-box .m-list-cont .u-user-msg text {
+  width: auto;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  margin: 0 0 0 14rpx;
+}
+
+.g-list-box .m-list-cont .u-user-income {
+  font-size: 26rpx;
+  color: #ff2741;
+  display: block;
+  overflow: hidden;
+}
+
+.u-loading {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #7b7d83;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}

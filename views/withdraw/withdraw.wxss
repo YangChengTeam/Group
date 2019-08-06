@@ -1,0 +1,144 @@
+page {
+  background: #f3f5fb;
+}
+
+.g-cont-top {
+  width: 689rpx;
+  height: auto;
+  background: #fff;
+  box-shadow: 0px 8rpx 10rpx #e4e6ec;
+  display: block;
+  overflow: hidden;
+  margin: 20rpx auto 0;
+  padding: 0 0 55rpx 0;
+  box-sizing: border-box;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.g-cont-top image {
+  width: 162rpx;
+  height: 221rpx;
+  margin: 85rpx auto 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-top text {
+  width: 100%;
+  height: auto;
+  font-size: 34rpx;
+  font-weight: normal;
+  color: #2c3035;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.u-bg-3 {
+  width: 750rpx;
+  height: 57rpx;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.g-cont-foot {
+  width: 689rpx;
+  height: auto;
+  background: #fff;
+  box-shadow: 0px 8rpx 10rpx #e4e6ec;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0 68rpx 55rpx 58rpx;
+  box-sizing: border-box;
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.m-steps-box {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.g-cont-foot .m-steps-cont {
+  width: 100%;
+  height: auto;
+  margin: 35rpx 0 0rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.g-cont-foot .m-steps-cont .u-rank {
+  width: 59rpx;
+  height: 59rpx;
+  line-height: 39rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  background: #f00;
+  border-radius: 100%;
+  display: block;
+  overflow: hidden;
+  border: 10rpx solid #fff;
+  box-sizing: border-box;
+}
+
+.g-cont-foot .m-steps-cont .m-steps-tips {
+  width: auto;
+  height: auto;
+  padding: 0 0 0 25rpx;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.g-cont-foot .m-steps-cont .m-steps-tips text {
+  width: 100%;
+  height: auto;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #5a5e64;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-foot .m-steps-cont .m-steps-tips text:nth-child(1) {
+  font-size: 28rpx;
+  color: #2c3035;
+  margin: 0 0 10rpx 0;
+}
+
+.g-cont-foot .u-steps-solid {
+  width: 2rpx;
+  height: 1000rpx;
+  background: #d9d9d9;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 28rpx;
+  top: 35rpx;
+  z-index: 0;
+}
+
+.m-submit-btn {
+  width: 688rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  border-radius: 44rpx;
+  background: linear-gradient(to top right, #ff2741, #ff6377);
+  box-shadow: 0px 6rpx 8rpx #f89dab;
+  display: block;
+  overflow: hidden;
+  margin: 80rpx auto 0;
+}

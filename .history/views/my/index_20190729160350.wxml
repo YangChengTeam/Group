@@ -1,0 +1,155 @@
+<!--views/my/index.wxml-->
+<nav opacity="{{navOpacity}}" isnop="{{0}}" background="{{basicConfig.backgroundColor}}" isback="0" title="武汉团购" color="#fff"></nav>
+
+<view class='u-top-bg' style="height:{{topBgHeight}}px;"></view>
+
+<view class='g-top-box'>
+  <image src='/images/img.png' class='u-user-img'></image>
+  <view class='m-user-box'>
+    <text class='u-user-name'>可爱值爆表</text>
+    <text class='u-user-label' bindtap='nav2super_fan_card'>超级粉丝卡></text>
+  </view>
+  <view class='m-right-btn'>
+    <image src='/images/me/icon-8.png' class='u-qgye-icon'></image>
+    <text>抢购余额</text>
+  </view>
+  <view class='m-right-btn' catchtap='show_bind_wx_dialog'>
+    <image src='/images/me/icon-9.png' class='u-bdwx-icon'></image>
+    <text>绑微信号</text>
+  </view>
+</view>
+<view class='g-yaoqing-box'>
+  <text>邀请会员，成为你的专属合伙人</text>
+  <view bindtap='nav2join_partner'>立即邀请</view>
+</view>
+<view class='g-four-btn'>
+  <view bindtap='nav2client'>
+    <image src='/images/me/icon-10.png' class='u-icon-1'></image>
+    <text>我的客户</text>
+  </view>
+  <view>
+    <image src='/images/me/icon-11.png' class='u-icon-2'></image>
+    <text>推广记录</text>
+  </view>
+  <view bindtap='nav2rank'>
+    <image src='/images/me/icon-12.png' class='u-icon-3'></image>
+    <text>达人排行榜</text>
+  </view>
+  <view>
+    <image src='/images/me/icon-13.png' class='u-icon-4'></image>
+    <text>我的店铺</text>
+  </view>
+</view>
+<view class='g-white-box g-plate-1'>
+  <text class='u-h2'>当前等级</text>
+  <view class='m-devel'>
+    <text>金牌合伙人</text>
+    <text bindtap='show_rank_dialog'>查看晋升制度，享受更高权益 ></text>
+  </view>
+  <text class='u-h3'>我的资产</text>
+  <view class='m-money'>
+    <view class='m-cont'>
+      <text>5.00</text>
+      <text>总收益（元）</text>
+    </view>
+    <view class='m-cont'>
+      <text>5.00</text>
+      <text>今日收益（元）</text>
+    </view>
+    <view class='u-solid'></view>
+    <view class='m-cont'>
+      <text>5.00</text>
+      <text>可提现金额（元）</text>
+      <image src='/images/me/icon-14.png'></image>
+    </view>
+  </view>
+</view>
+<view class='g-white-box g-plate-2'>
+  <view class='m-title'>
+    <text>订单管理</text>
+    <text bindtap='nav2order_list' data-type="0">全部订单 ></text>
+  </view>
+  <view class='m-cont'>
+    <view class='m-btn' bindtap='nav2order_list' data-type="1">
+      <image src='/images/me/icon-15.png' class='u-icon-1'></image>
+      <text class='u-name'>代付款</text>
+      <text class='u-tips'>1</text>
+    </view>
+    <view class='m-btn' bindtap='nav2order_list' data-type="2">
+      <image src='/images/me/icon-16.png' class='u-icon-2'></image>
+      <text class='u-name'>待使用</text>
+      <text class='u-tips'>2</text>
+    </view>
+    <view class='m-btn' bindtap='nav2order_list' data-type="3">
+      <image src='/images/me/icon-17.png' class='u-icon-3'></image>
+      <text class='u-name'>未收货</text>
+      <text class='u-tips'>3</text>
+    </view>
+    <view class='m-btn' bindtap='nav2order_list' data-type="4">
+      <image src='/images/me/icon-18.png' class='u-icon-4'></image>
+      <text class='u-name'>待评价</text>
+      <text class='u-tips'>4</text>
+    </view>
+  </view>
+</view>
+<view class='g-white-box g-plate-3'>
+  <view class='m-cont'>
+    <text class='u-name'>砍价订单</text>
+    <view class='u-icon'></view>
+  </view>
+  <view class='m-cont'>
+    <text class='u-name'>优惠券</text>
+    <text class='u-tips'>1</text>
+    <view class='u-icon'></view>
+  </view>
+  <view class='m-cont' bindtap='nav2red_envelope'>
+    <text class='u-name'>我的红包</text>
+    <text class='u-tips'>1</text>
+    <view class='u-icon'></view>
+  </view>
+  <view class='m-cont'>
+    <text class='u-name'>商品兑换</text>
+    <view class='u-icon'></view>
+  </view>
+  <view class='m-cont'>
+    <text class='u-name'>联系客服</text>
+    <view class='u-icon'></view>
+  </view>
+</view>
+<view class='g-msg'>
+  <text>v1.10000</text>
+  <text>电商平台商户合作电话：1313131313（微信同号）</text>
+</view>
+<view style='height: 48px; width:750rpx; '></view>
+
+<dialog show="{{show_bind_wx}}">
+  <view class='g-bindwx-eject'>
+    <view class='m-main-box'>
+      <text class='u-bindwx-h3'>绑定微信号</text>
+      <input placeholder='请输入微信号码' value='{{bindwxval}}' bindinput='inputwx'></input>
+      <view class='u-bindwx-btn {{bindwxval != ""?"f-hover":""}}'>确认绑定</view>
+    </view>
+    <view class='u-bindwx-bg' catchtap='closeBindWx'></view>
+  </view>
+</dialog>
+
+<dialog show="{{show_rank}}">
+<view class='g-up-eject'>
+  <view class='m-upcont-box'>
+    <view class='m-up-cont'>
+      <view class='m-up-top'>
+        <text class='u-t1'>金牌合伙人</text>
+        <text class='u-t2'>下个等级：钻石合伙人</text>
+        <image src='/images/me/bg-8.png' class='u-top-bg'></image>
+      </view>
+      <view class='m-up-main'>
+        <text class='u-t1'>升级需要满足以下条件：</text>
+        <view class='u-t2'>销售额还差 <view>1000.00</view> 元即可升级新进成员人数还差 <view>15</view> 人</view>
+        <view class='u-btn'>我知道了</view>
+      </view>
+    </view>
+    <image src='/images/me/icon-33.png' class='u-close-btn'></image>
+  </view>
+  <view class='u-up-bg'></view>
+</view>
+</dialog>

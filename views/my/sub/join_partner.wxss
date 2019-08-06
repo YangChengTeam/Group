@@ -1,0 +1,172 @@
+/* views/my/join_partner.wxss */
+
+page {
+  background: #fff;
+  padding: 0 0 0 0;
+}
+
+.u-top-bg {
+  width: 750rpx;
+  height: 548rpx;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.g-cont-box {
+  width: 659rpx;
+  height: 530rpx;
+  background: #fff;
+  border-radius: 36rpx;
+  margin: 320rpx auto 0;
+  box-shadow: 0px 0rpx 22rpx #f2dede;
+  padding: 40rpx 50rpx;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 6;
+}
+
+.g-cont-box .m-cont-1 {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-box .m-cont-1 .u-h3 {
+  width: 100%;
+  height: 50rpx;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-box .m-cont-1 input {
+  width: 100%;
+  height: 83rpx;
+  line-height: 83rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #333;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin: 36rpx 0 0;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-box .m-cont-2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-box .m-cont-2 .u-img {
+  width: 150rpx;
+  height: 133rpx;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-box .m-cont-2 .u-h3 {
+  width: 100%;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  margin: 30rpx 0 0;
+}
+
+.g-cont-box .m-cont-2 .u-h4 {
+  width: 100%;
+  height: auto;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #aaa;
+  text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 30rpx 0 0;
+}
+
+.g-cont-box .m-cont-2 .u-h4 text {
+  width: auto;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  padding: 0 15rpx 0 0;
+  box-sizing: border-box;
+}
+
+.g-cont-box .m-cont-2 .u-h4 image {
+  width: 150rpx;
+  height: 50rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.g-cont-box .u-btn {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background: #f55954;
+  border-radius: 66rpx;
+  display: block;
+  overflow: hidden;
+  margin: 50rpx 0 0;
+}
+
+.g-tips-box {
+  width: 100%;
+  height: auto;
+  padding: 60rpx;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+}
+
+.g-tips-box .u-h4 {
+  width: 100%;
+  height: auto;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
+.g-tips-box .u-p {
+  width: 100%;
+  height: auto;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #000;
+  margin: 0 0 0;
+  display: block;
+  overflow: hidden;
+}

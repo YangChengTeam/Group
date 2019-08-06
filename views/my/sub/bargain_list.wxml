@@ -1,0 +1,47 @@
+<!--views/my/sub/bargain_list.wxml-->
+<nav isnop="{{0}}" background="#fff" isback="1" title="订单详情"></nav>
+
+
+<view class='g-tab-2'>
+  <view class='m-btn{{type == item.type?" f-hover":""}}' wx:for="{{typeInfos}}" wx:key="type" data-type="{{item.type}}" bindtap='select'>
+    <text class='u-font'>{{item.name}}</text>
+    <text class='u-icon-bg'></text>
+  </view>
+
+</view>
+<view class='g-list-cont' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+  <view class='m-cont'>
+    <image src='{{item.img}}' class='u-cont-img'></image>
+    <view class='u-cont-title'>
+      <text class='u-t1'>{{item.title}}</text>
+      <text class='u-t2'>结束时间：{{item.end_time}}</text>
+    </view>
+  </view>
+  <view class='m-cont-middle'>
+    <view class='u-cont'>
+      <text class='u-t1'>{{item.price}}</text>
+      <text class='u-t2'>原价</text>
+      <view class='u-solid'></view>
+    </view>
+    <view class='u-cont'>
+      <text class='u-t1'>{{item.curr_price}}</text>
+      <text class='u-t2'>当前价</text>
+      <view class='u-solid'></view>
+    </view>
+    <view class='u-cont'>
+      <text class='u-t1'>{{item.bottom_price}}</text>
+      <text class='u-t2'>底价</text>
+      <view class='u-solid'></view>
+    </view>
+    <view class='u-cont'>
+      <text class='u-t1'>{{item.help_num}}</text>
+      <text class='u-t2'>人减价</text>
+    </view>
+  </view>
+  <view class='m-cont-foot'>
+    <view class='u-t1'>活动状态：
+      <text>{{item.msg}}</text>
+    </view>
+    <view class='u-btn' wx:if='{{item.msg=="去付款"}}'>去付款</view>
+  </view>
+</view>
