@@ -1,5 +1,5 @@
 <!--views/my/sub/exchange_red_envelope.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="兑换红包"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="兑换红包"></nav> -->
 
 <view class='g-user-box' bindtap='nav2record'>
   <image src='{{userInfo.face}}' class='u-user-img'></image>

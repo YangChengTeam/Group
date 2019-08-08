@@ -34,7 +34,7 @@ InfoPage({
         topBgOffset = 335
       }
       this.setData({
-        topBgHeight: app.rpx2px(topBgOffset) + app.totalTopHeight
+        topBgHeight: app.rpx2px(topBgOffset)
       })
       app.userInfo = info.user_info
       that.setData({
@@ -43,11 +43,22 @@ InfoPage({
       })
     }
     this.fail = function(){
-      that.setData({
-        navOpacity: 0,
-        loading: 0
-      })
+       
     }
+    this.seeLevel()
+  },
+  seeLevel(e){
+      var that = this
+      var options = {}
+      options.path = "/user/member/seeLevel"
+      options.success = function(info){
+        if(info.status){
+          that.setData({
+            level: info.data
+          })
+        }
+      }
+      this.request(options)
   },
   onPageScroll(e) {
     let scrollTop = e.scrollTop

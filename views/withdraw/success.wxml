@@ -1,6 +1,4 @@
 <!--views/withdraw/success.wxml-->
-<head pagename="{{pagename}}" backgroundcolor="{{backgroundcolor}}" fontcolor="{{fontcolor}}"></head>
-<view class='g-headtop' style='height:{{44+statusBarHeight}}px'></view>
 <view class='g-cont-top'>
   <image src='/images/me/icon-5.png'></image>  
   <text>申请提现成功</text>
@@ -38,4 +36,4 @@
   </view>
 </view>
 
-<view class='m-submit-btn'>返回结算中心</view>
+<view class='m-submit-btn' bindtap='back'>返回结算中心</view>

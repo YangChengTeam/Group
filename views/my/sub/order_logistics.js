@@ -1,4 +1,4 @@
-// views/my/sub/promotion_content.js
+// views/my/sub/order_logistics.js
 Page({
 
   /**

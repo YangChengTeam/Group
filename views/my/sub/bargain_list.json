@@ -1,3 +1,7 @@
-{
-  "usingComponents": {}
+{ 
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "砍价订单",
+  "usingComponents": {
+            "statusview": "../../components/statusview/statusview"
+  }
 }

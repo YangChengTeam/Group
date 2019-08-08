@@ -1,4 +1,6 @@
 {
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "兑换红包",
   "usingComponents": {
   }
 }

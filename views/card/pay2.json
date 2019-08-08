@@ -1,3 +1,5 @@
 {
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "超级粉丝卡",
   "usingComponents": {}
 }

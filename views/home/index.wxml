@@ -1,5 +1,7 @@
 <!--index.wxml-->
-<nav opacity="{{navOpacity}}" isnop="{{1}}" background="{{basicConfig.backgroundColor}}" isback="0" issearch="1" title="武汉团购" color=""></nav>
+<loading wx:if="{{loading}}"></loading>
+<block wx:if="{{!loading}}">
+<nav opacity="{{navOpacity}}" isnop="{{1}}" background="#fff" isback="0" issearch="1" title="武汉团购" color=""></nav>
 <banner list="{{bannerList}}"></banner>
 <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
    <category list="{{categoryList}}" wx:if="{{item.type== viewtype[0] }}"></category>
@@ -8,4 +10,5 @@
    <activity wx:if="{{item.type== viewtype[3] }}" mode="{{item.mode}}"></activity>
 </block>
 <view style='height: 48px; width:750rpx; '></view>
+</block>
 

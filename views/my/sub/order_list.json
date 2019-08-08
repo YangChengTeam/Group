@@ -1,4 +1,6 @@
 {
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的订单",
   "usingComponents": {
         "statusview": "../../components/statusview/statusview"
   }

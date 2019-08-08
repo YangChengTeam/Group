@@ -1,8 +1,8 @@
-{
+{ 
+  "navigationStyle": "custom",
   "usingComponents": {
       "banner": "../../components/banner/banner",
       "category": "../../components/category/category",
       "list": "../../components/list/list"
-   },
-   "enablePullDownRefresh": true
+   }
 }

@@ -1,5 +1,5 @@
 <!--views/my/sub/order_comment.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="评论" back_confirm_msg='{{ this.data.content.length|| this.data.imgs.length ? "尚未编辑成功,您确定退出评论?": ""}}'></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="评论" back_confirm_msg='{{ this.data.content.length|| this.data.imgs.length ? "尚未编辑成功,您确定退出评论?": ""}}'></nav> -->
 
 <view class='g-main-box'>
   <view class='m-goods-box'>
@@ -10,7 +10,7 @@
     <text>总体</text>
     <view class='m-score-img'>
       <view catchtap='playScore' data-index="{{index}}" wx:for="{{5}}" wx:key="index" class='u-img'>
-        <image src='images/my/score-{{score-1-index >= 0?"1":"0"}}.png'></image>
+        <image src='images/score-{{score-1-index >= 0?"1":"0"}}.png'></image>
       </view>
     </view>
   </view>
@@ -19,8 +19,8 @@
     <text>请写下至少15字的点评哦~</text>
   </view>
   <view class='m-phone-box'>
-    <image src='{{item.local_path}}' wx:for="{{imgs}}" wx:for-index="idx" wx:for-item="item" wx:key="*this"></image>
-    <view class='u-upimg-btn' catchtap='uploadimg'><image src='images/my/icon-37.png'></image></view>
+    <image src='{{item.local_path}}' wx:for="{{imgs}}" wx:for-index="idx" wx:for-item="item" wx:key="id"  bindtap='del' data-idx='{{idx}}'></image>
+    <view class='u-upimg-btn' catchtap='uploadimg'><image src='images/icon-37.png'></image></view>
   </view>
 </view>
 <view class='u-foot-tips'>商品点评完，记得分享好友哦~</view>

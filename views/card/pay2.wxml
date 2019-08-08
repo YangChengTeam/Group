@@ -1,5 +1,5 @@
 <!--views/card/pay2.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="我的客户"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="超级粉丝卡"></nav> -->
 
 <view class='g-white-box'>
   <view class='m-choose-cont f-hover'>

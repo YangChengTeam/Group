@@ -4,7 +4,7 @@
 const app = getApp()
 
 const regeneratorRuntime = global.regeneratorRuntime = require('../../libs/runtime')
-const BasePage = require('../../base/base_page.js')
+const InfoPage = require('../../base/info_page.js')
 
 const {
   tabListAdpater
@@ -16,16 +16,22 @@ const request = require('../../libs/kk/request.js')
 
 
 
-BasePage({
+InfoPage({
   data: {
     viewtype: [0, 1, 2, 3]
   },
 
   async onLoad() {
     var that = this
+    this.path="/user/Config"
     app.configCallback = function(config) {
       that.refreshTabs()
-      that.selectedTab()
+      that.selectedTab() 
+    }
+    if (app.tabList.length) {
+      that.setData({
+         loading: 0
+      })
     }
     this.setData({
       navOpacity: 0,

@@ -40,11 +40,12 @@ ListPage({
   nav2detail(e){
     app.item = e.currentTarget.dataset.item
     if (app.item.diff_time <= 0){
-       wx.showToast({
-         title: '已过期',
-         icon: 'none'
-       })
-       return;
+      wx.showModal({
+        title: '提示',
+        content: '已过期',
+        showCancel: false
+      })
+      return
     }
     wx.navigateTo({
       url: '/views/my/sub/red_envelope_detail',

@@ -1,18 +1,18 @@
 <!--views/my/sub/order_comment_success.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="评论成功" delta="2"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="评论成功" delta="2"></nav> -->
 <view class='g-white-box'>
-  <image src='images/my/icon-30.png' class='u-img'></image>
+  <image src='images/icon-30.png' class='u-img'></image>
   <text class='u-t1'>评论成功</text>
   <view class='m-save-btn'>
-    <view class='u-savehb-btn'>生存点评海报</view>
-    <view class='u-share-btn'>分享我的评论</view>
+    <!-- <view class='u-share-btn'>生存点评海报</view> -->
+    <button class='u-savehb-btn' open-type='share'>分享我的评论</button>
   </view>
 </view>
 <view class='g-title'>
   <view class='m-text'>
-    <image src='images/my/title-icon-1.png' class='u-icon-1'></image>
+    <image src='images/title-icon-1.png' class='u-icon-1'></image>
     <text>好物推荐</text>
-    <image src='images/my/title-icon-2.png' class='u-icon-2'></image>
+    <image src='images/title-icon-2.png' class='u-icon-2'></image>
   </view>
 </view>
 <view class='g-list-box'>
@@ -26,26 +26,4 @@
       <text class='u-money-2'>￥499.00</text>
     </view>
   </view>
-  <view class='m-cont'>
-    <view class='m-img'>
-      <image src='/images/img1.png' class='u-img'></image>
-    </view>
-    <text class='u-title'>12件已售12件已售12件已售12件已售12件已件已售12件已售12件已售12件已售12件已售</text>
-    <view class='u-buy'>
-      <text class='u-money-1'>￥9.90</text>
-      <text class='u-money-2'>￥499.00</text>
-    </view>
-  </view>
-  <view class='m-cont'>
-    <view class='m-img'>
-      <image src='/images/img1.png' class='u-img'></image>
-    </view>
-    <text class='u-title'>12件已售12件已售12件已售12件已售12件已件已售12件已售12件已售12件已售12件已售</text>
-    <view class='u-buy'>
-      <text class='u-money-1'>￥9.90</text>
-      <text class='u-money-2'>￥499.00</text>
-    </view>
-  </view>
 </view>
-
-

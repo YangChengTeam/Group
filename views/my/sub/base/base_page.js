@@ -26,18 +26,46 @@ var BasePage = function (obj) {
         break
       }
     }
-
+    this.setData({
+      selected: index
+    })
     if (hasTabBar) {
       this.getTabBar().setData({
-        selected: index
-      })
-    } else {
-      this.setData({
         selected: index
       })
     }
   }
 
+  obj.loading = function () {
+    if (this.loaded) return
+    this.loaded = 1
+    this.setData({
+      navOpacity: 1,
+      loading: 1,
+      status: 0
+    })
+    obj.showTabs(0)
+  }
+
+  obj.loadend = function () {
+    obj.showTabs(1)
+    this.setData({
+      navOpacity: 0,
+      loading: 0,
+      status: 2
+    })
+  }
+
+  obj.showTabs = function (show) {
+    var thiz = this
+    var hasTabBar = typeof this.getTabBar === 'function' &&
+      this.getTabBar()
+    if (hasTabBar) {
+      thiz.getTabBar().setData({
+        show: show
+      })
+    }
+  }
   /**
    * 刷新Tab 
    */
@@ -67,14 +95,10 @@ var BasePage = function (obj) {
         thiz.getTabBar().setData({
           list: app.tabList
         })
-      } else {
-        thiz.setData({
-          tabList: app.tabList
-        })
       }
     }
   }
-  obj.request = async function (options) {
+  obj.request = async function (options, msg) {
     var params = {
       token: "1",
     }
@@ -85,7 +109,6 @@ var BasePage = function (obj) {
         ...options.params
       }
     }
-    
     let data = await request.post(options.path, params).catch(e => {
       this.err = e
       console.log(e)
@@ -106,25 +129,25 @@ var BasePage = function (obj) {
     }
     wx.stopPullDownRefresh()
   }
-
-
   /**
    * 重载Page onLoad
    */
-  obj.mirror_onLoad = obj.onLoad || function () { };
-  obj.onLoad = function () {
+  obj.mirror_onLoad = obj.onLoad || function (options) { };
+  obj.onLoad = function (options) {
     obj = {
       ...obj,
       ...this
     } // 合并到子Page
-    obj.mirror_onLoad()
+
+    obj.mirror_onLoad(options)
     this.page = 1
     this.data.status = -2
+
     this.setData({
-      config: app.config,
+      version: app.version || "v1.0.0",
+      config: app.config || {},
       basicConfig: app.templateConfig.theme,
       totalTopHeight: app.totalTopHeight,
-      navOpacity: 0,
       userInfo: app.userInfo || {}
     })
     this.refreshTabs()
@@ -139,7 +162,7 @@ var BasePage = function (obj) {
     this.selectedTab()
   }
 
-  obj.select = function(e) {
+  obj.select = function (e) {
     this.params.status = e.currentTarget.dataset.type
     if (this.data.type === this.params.status) return
     this.setData({
@@ -148,6 +171,8 @@ var BasePage = function (obj) {
     })
     this.refreshData()
   }
+
+
 
   Page(obj)
 }

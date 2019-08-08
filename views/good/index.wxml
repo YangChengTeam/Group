@@ -1,0 +1,89 @@
+<!--views/good/index.wxml-->
+<image src='images/img-3.png' class='u-banner'></image>
+<view class='g-tab-btn'>
+  <view class='u-btn{{type == item.type?" f-hover":""}}' wx:for="{{typeInfos}}" wx:key="type" data-type="{{item.type}}" bindtap='select'>
+    <text>{{item.name}}</text>
+    <view class='u-icon'></view>
+  </view>
+</view>
+<block wx:if='{{type=="0"}}'>
+
+  <view class='g-label'>
+    <text class='{{goodType=="" ? "f-hover":""}}' bindtap='selectType' data-id=''>全部</text>
+    <text class='{{goodType==item.id ? "f-hover":""}}' wx:for="{{info.goods_type_list}}" wx:key="id" data-id="{{item.id}}" bindtap='selectType'>{{item.name}}</text>
+  </view>
+
+  <view class='g-main-box' wx:for="{{list}}" wx:key="id">
+    <view class='m-main-user' bindtap='nav2comment'>
+      <image src='{{item.face}}' class='u-face'></image>
+      <view class='m-user-msg'>
+        <text class='u-name'>{{item.nick_name}}</text>
+        <text class='u-date'>{{item.add_time}}</text>
+      </view>
+      <view class='u-code'>
+        <text>好评：</text>
+        <image src='images/code-{{item.star}}.png'></image>
+      </view>
+    </view>
+    <text class='u-user-comment'>{{item.content}}</text>
+    <view class='m-goods-box'>
+      <image src='{{item.img_show}}' class='u-img'></image>
+      <view class='m-goods-msg' catchtap='nav2detail'>
+        <text class='u-name'>{{item.name}}</text>
+        <view class='m-money'>
+          <text>￥{{item.price}}</text>
+          <view class='u-btn' >立即购买</view>
+        </view>
+      </view>
+    </view>
+    <view class='m-function-btn'>
+      <view class='u-btn' catchtap='like'>
+        <image src='images/icon-48.png'></image>
+        <text>125</text>
+      </view>
+      <view class='u-btn' catchtap='share'>
+        <image src='images/icon-49.png' style='width:36rpx;'></image>
+        <text>分享</text>
+      </view>
+    </view>
+  </view>
+  <statusview status="{{status}}"></statusview> 
+</block>
+<block wx:if='{{type=="1"}}'>
+  <view class='g-main-box2'>
+    <image src='/images/img2.png' class='u-img'></image>
+    <view class='m-main-msg'>
+      <text class='u-name'>武汉网</text>
+      <view class='m-address'>
+        <text class='u-font'>推荐好店推荐好店推荐好店推荐好店</text>
+        <view class='u-icon'>
+          <image src='/images/me/icon-50.png'></image>
+          <text>20km</text>
+        </view>
+      </view>
+    </view>
+    <view class='m-main-list'>
+      <view class='m-main-li'>
+        <text class='u-label'>抢</text>
+        <text class='u-name'>推荐好店推荐好店推荐好店推荐好店</text>
+        <view class='u-icon'></view>
+      </view>
+      <view class='m-main-li'>
+        <text class='u-label'>抢</text>
+        <text class='u-name'>推荐好店推荐好店推荐好店推荐好店</text>
+        <view class='u-icon'></view>
+      </view>
+      <view class='m-main-li'>
+        <text class='u-label'>抢</text>
+        <text class='u-name'>推荐好店推荐好店推荐好店推荐好店</text>
+        <view class='u-icon'></view>
+      </view>
+    </view>
+    <view class='m-good'>
+      <image src='/images/me/icon-51.png'></image>
+      <text>125125</text>
+    </view>
+  </view>
+  <statusview status="{{status}}"></statusview> 
+</block>
+<tab selected="{{selected}}" show="1"></tab>

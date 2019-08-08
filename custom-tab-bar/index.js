@@ -17,15 +17,22 @@ Component({
     selectedColor: {
       type: Array,
       value: []
+    },
+    show: {
+       type: Number,
+       value: 0
     }
   },
   created() {
 
   },
   attached() {
+    var index = -1    
     this.setData({
-      ...this.properties
+      ...this.properties,
+      list: app.tabList
     })
+   
   },
   methods: {
     switchTab(e) {
@@ -47,13 +54,13 @@ Component({
           url: path,
         })
       } else {
-        wx.navigateTo({
+        wx.redirectTo({
           url: path,
         })
       }
 
       this.setData({
-        selected: data.index
+         selected: data.index
       })
     }
   }

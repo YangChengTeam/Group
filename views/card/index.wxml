@@ -1,5 +1,5 @@
 <!--views/card/index.wxml-->
-<nav  isnop="{{0}}" background="#fff" isback="1" title="超级粉丝卡" ></nav>
+<!-- <nav  isnop="{{0}}" background="#fff" isback="1" title="超级粉丝卡" ></nav> -->
 
 <view class='m-card-box'>
   <view class='m-top'>

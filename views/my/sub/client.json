@@ -1,5 +1,7 @@
 {
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的客户",
   "usingComponents": {
-        "statusview": "../../components/statusview/statusview"
+    "statusview": "../../components/statusview/statusview"
   }
 }

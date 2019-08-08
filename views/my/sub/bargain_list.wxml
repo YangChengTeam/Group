@@ -1,6 +1,5 @@
 <!--views/my/sub/bargain_list.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="订单详情"></nav>
-
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="砍件订单"></nav> -->
 
 <view class='g-tab-2'>
   <view class='m-btn{{type == item.type?" f-hover":""}}' wx:for="{{typeInfos}}" wx:key="type" data-type="{{item.type}}" bindtap='select'>
@@ -45,3 +44,4 @@
     <view class='u-btn' wx:if='{{item.msg=="去付款"}}'>去付款</view>
   </view>
 </view>
+<statusview status="{{status}}"></statusview>

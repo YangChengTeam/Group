@@ -1,6 +1,6 @@
 <!--views/my/order_list.wxml-->
 <!-- 订单列表 -->
-<nav isnop="{{0}}" background="#fff" isback="1" title="我的订单"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="我的订单"></nav> -->
 
 <view class='g-tab-2'>
   <view class='m-btn{{type == item.type?" f-hover":""}}' wx:for="{{typeInfos}}" wx:key="type" data-type="{{item.type}}" bindtap='select'>
@@ -23,18 +23,34 @@
   </view>
   <view class='m-foot'>
     <view>{{item.orders_goods_num}}件商品,总金额：
-        <text>¥{{item.orders_goods_num*item.orders_money}}</text>
+      <text>¥{{item.orders_goods_num*item.orders_money}}</text>
     </view>
   </view>
   <view class='m-cont-foot'>
     <text class='u-t1'>下单日期：{{item.add_time}}</text>
-    <block wx:if='{{item.status_tag=="待支付"}}'>
-      <view class='u-btn' data-item="{{item}}" bindtap='nav2pay'>确认付款</view>
+
+    <view wx:if='{{item.status_tag=="支付超时" || item.status_tag=="已退货" || item.status_tag=="已取消支付"}}' class='u-btn' data-id="{{item.id}}" bindtap='del'>删除</view>
+
+       <view wx:if='{{item.status_tag=="待发货"}}' class=' u-btn ' data-item="{{item}}" bindtap='refund'>退款</view>
+    <view wx:if='{{item.status_tag=="退款成功"||item.status_tag=="待发货"||item.status_tag=="待使用"}}'  class=' u-btn ' data-item="{{item}}" bindtap='nav2detail'>订单详请</view>
+
+
+    <view class='u-btn' data-item="{{item}}" bindtap='contact' wx:if='{{item.status_tag=="支付失败"}}'>联系客服</view>
+
+    <block wx:if='{{item.status_tag=="申请退款中"}}'>
+     <view class='u-btn' data-item="{{item}}" bindtap='nav2detail'>订单详请</view>
+      <view class='u-btn' data-item="{{item}}" bindtap='cancel_refund'>取消退款</view>
     </block>
-    <block wx:else>
-      <view class='u-btn' data-id="{{item.id}}" bindtap='del'>删除</view>
-      <view class='u-btn' data-item="{{item}}"  bindtap='nav2detail' wx:if='{{item.pay_status==5 && item.status_tag !="待评论"}}'>订单详请</view>
-      <view class='u-btn' data-item="{{item}}" bindtap='comment' wx:if='{{item.status_tag=="待评论"}}'>立即评论</view>
+
+    <block wx:if='{{ item.status_tag=="待收货"}}'>
+      <view class='u-btn ' data-item="{{item}}" bindtap='nav2logistics'>查看物流</view>
+      <view class='u-btn ' data-item="{{item}}" bindtap='confirm_receipt'>确认收货</view>
+    </block>
+
+    <view wx:if='{{item.status_tag=="待支付"}}' class='u-btn' data-item="{{item}}" bindtap='nav2pay'>确认付款</view>
+<block wx:if='{{item.status_tag=="待评论" || item.status_tag=="已使用" }}'>
+    <view class='u-btn' data-id="{{item.id}}" bindtap='del'>删除</view>
+    <view class='u-btn ' data-item="{{item}}" bindtap='nav2comment'>立即评论</view>
     </block>
   </view>
 </view>

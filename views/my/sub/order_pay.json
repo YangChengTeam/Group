@@ -1,4 +1,6 @@
 {
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "支付",
   "usingComponents": {
     "dialog": "../../components/dialog/dialog"
   }

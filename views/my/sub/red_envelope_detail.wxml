@@ -1,5 +1,5 @@
 <!--views/my/sub/red_envelope_detail.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="红包详情"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="红包详情"></nav> -->
 
 <image class="u-top-bg" src='images/bg-6.png' /> 
 <view class='g-hongbao-box'>

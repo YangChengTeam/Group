@@ -17,7 +17,8 @@ var ListPage = function (obj) {
     var options = {}
     var params = {
       token: "1",
-      page: this.page
+      page: this.page,
+      p: this.page
     }
     if (this.params) {
       params = {
@@ -29,6 +30,7 @@ var ListPage = function (obj) {
     options.path = this.path
     var that = this
     options.success = function (info) {
+      that.loadend()
       var status = 1
       if (!info.list) {
         info.list = []
@@ -38,8 +40,9 @@ var ListPage = function (obj) {
         status = 2
       } else {
         that.page++
+        console.log(that.page)
       }
-      var list = [...info.list, ...that.data.list]
+      var list = [...that.data.list, ...info.list]
       if (list.length == 0) {
         status = 3
       }
@@ -61,7 +64,11 @@ var ListPage = function (obj) {
       }
       wx.stopPullDownRefresh()
     }
-    this.request(options, this.msg)
+    this.loading()
+    that.request(options)
+  }
+  obj.loadData = function () {
+    obj.loadList()
   }
   obj.refreshData = function () {
     this.page = 1
@@ -76,6 +83,7 @@ var ListPage = function (obj) {
       ...this
     } // 合并到子Page
     obj.list_onLoad()
+    this.page = 1
     this.data.list = []
     obj.loadList()
   }

@@ -1,128 +1,127 @@
 <!--views/my/index.wxml-->
-<nav opacity="{{navOpacity}}" isnop="{{0}}" background="{{basicConfig.backgroundColor}}" isback="0" title="武汉团购" color="#fff"></nav>
-
+<!-- <nav opacity="{{navOpacity}}" isnop="{{0}}" background="{{basicConfig.backgroundColor}}" isback="0" title="武汉团购" color="#fff"></nav> -->
 <loading wx:if="{{loading}}"></loading>
-<block  wx:if="{{!loading}}">
-<view class='u-top-bg' style="height:{{topBgHeight}}px;" ></view>
-<view class='g-top-box'>
-  <image src='{{info.user_info.face}}' class='u-user-img'></image>
-  <view class='m-user-box'>
-    <text class='u-user-name'>{{info.user_info.nick_name}}</text>
-    <text class='u-user-label' bindtap='nav2super_fan_card'>超级粉丝卡></text>
+<block wx:if="{{!loading}}">
+  <view class='u-top-bg' style="height:{{topBgHeight}}px;"></view>
+  <view class='g-top-box'>
+    <image src='{{info.user_info.face}}' class='u-user-img'></image>
+    <view class='m-user-box'>
+      <text class='u-user-name'>{{info.user_info.nick_name}}</text>
+      <text class='u-user-label' bindtap='nav2super_fan_card'>超级粉丝卡></text>
+    </view>
+    <view class='m-right-btn'>
+      <image src='/images/my/icon-8.png' class='u-qgye-icon'></image>
+      <text>抢购余额</text>
+    </view>
+    <view class='m-right-btn' catchtap='show_bind_wx_dialog'>
+      <image src='/images/my/icon-9.png' class='u-bdwx-icon'></image>
+      <text>绑微信号</text>
+    </view>
   </view>
-  <view class='m-right-btn'>
-    <image src='/images/my/icon-8.png' class='u-qgye-icon'></image>
-    <text>抢购余额</text>
+  <view class='g-yaoqing-box'>
+    <block wx:if="{{info.user_info.is_seller}}">
+      <text>邀请会员，成为你的专属合伙人</text>
+      <view bindtap='nav2join_partner'>立即邀请</view>
+    </block>
+    <block wx:else>
+      <text>申请，成为你的专属合伙人</text>
+      <view bindtap='nav2apply'>立即申请</view>
+    </block>
   </view>
-  <view class='m-right-btn' catchtap='show_bind_wx_dialog'>
-    <image src='/images/my/icon-9.png' class='u-bdwx-icon'></image>
-    <text>绑微信号</text>
+  <view class='g-four-btn' wx:if="{{info.user_info.is_seller}}">
+    <view bindtap='nav2client'>
+      <image src='/images/my/icon-10.png' class='u-icon-1'></image>
+      <text>我的客户</text>
+    </view>
+    <view bindtap='nav2promotion_record'>
+      <image src='/images/my/icon-11.png' class='u-icon-2'></image>
+      <text>推广记录</text>
+    </view>
+    <view bindtap='nav2rank'>
+      <image src='/images/my/icon-12.png' class='u-icon-3'></image>
+      <text>达人排行榜</text>
+    </view>
+    <view bindtap='nav2shop'>
+      <image src='/images/my/icon-13.png' class='u-icon-4'></image>
+      <text>我的店铺</text>
+    </view>
   </view>
-</view>
-<view class='g-yaoqing-box'>
-  <block wx:if="{{info.user_info.is_seller}}">
-    <text>邀请会员，成为你的专属合伙人</text>
-    <view bindtap='nav2join_partner'>立即邀请</view>
-  </block>
-  <block wx:else>
-    <text>申请，成为你的专属合伙人</text>
-    <view bindtap='nav2apply'>立即申请</view>
-  </block>
-</view>
-<view class='g-four-btn' wx:if="{{info.user_info.is_seller}}">
-  <view bindtap='nav2client'>
-    <image src='/images/my/icon-10.png' class='u-icon-1'></image>
-    <text>我的客户</text>
+  <view class='g-white-box g-plate-1' wx:if="{{info.user_info.is_seller}}">
+    <text class='u-h2'>当前等级</text>
+    <view class='m-devel'>
+      <text>{{info.user_info.level_name}}</text>
+      <text bindtap='show_rank_dialog' wx:if="{{level}}">查看晋升制度，享受更高权益 ></text>
+    </view>
+    <text class='u-h3'>我的资产</text>
+    <view class='m-money'>
+      <view class='m-cont'>
+        <text>{{info.assets.all}}</text>
+        <text>总收益（元）</text>
+      </view>
+      <view class='m-cont'>
+        <text>{{info.assets.today}}</text>
+        <text>今日收益（元）</text>
+      </view>
+      <view class='u-solid'></view>
+      <view class='m-cont' bindtap='nav2withdraw'>
+        <text>{{info.assets.draw}}</text>
+        <text>可提现金额（元）</text>
+        <image src='/images/my/icon-14.png'></image>
+      </view>
+    </view>
   </view>
-  <view bindtap='nav2promotion_record'>
-    <image src='/images/my/icon-11.png' class='u-icon-2'></image>
-    <text>推广记录</text>
-  </view>
-  <view bindtap='nav2rank'>
-    <image src='/images/my/icon-12.png' class='u-icon-3'></image>
-    <text>达人排行榜</text>
-  </view>
-  <view bindtap='nav2shop'>
-    <image src='/images/my/icon-13.png' class='u-icon-4'></image>
-    <text>我的店铺</text>
-  </view>
-</view>
-<view class='g-white-box g-plate-1' wx:if="{{info.user_info.is_seller}}">
-  <text class='u-h2'>当前等级</text>
-  <view class='m-devel'>
-    <text>{{info.user_info.level_name}}</text>
-    <text bindtap='show_rank_dialog'>查看晋升制度，享受更高权益 ></text>
-  </view>
-  <text class='u-h3'>我的资产</text>
-  <view class='m-money'>
-    <view class='m-cont'>
-      <text>{{info.assets.all}}</text>
-      <text>总收益（元）</text>
+  <view class='g-white-box g-plate-2'>
+    <view class='m-title'>
+      <text>订单管理</text>
+      <text bindtap='nav2order_list' data-type="0">全部订单 ></text>
     </view>
     <view class='m-cont'>
-      <text>{{info.assets.today}}</text>
-      <text>今日收益（元）</text>
-    </view>
-    <view class='u-solid'></view>
-    <view class='m-cont' bindtap='nav2withdraw'>
-      <text>{{info.assets.draw}}</text>
-      <text>可提现金额（元）</text>
-      <image src='/images/my/icon-14.png'></image>
-    </view>
-  </view>
-</view>
-<view class='g-white-box g-plate-2'>
-  <view class='m-title'>
-    <text>订单管理</text>
-    <text bindtap='nav2order_list' data-type="0">全部订单 ></text>
-  </view>
-  <view class='m-cont'>
-    <view class='m-btn' bindtap='nav2order_list' data-type="1">
-      <image src='/images/my/icon-15.png' class='u-icon-1'></image>
-      <text class='u-name'>代付款</text>
-      <text class='u-tips' wx:if="{{info.order_count && info.order_count.wait_pay != 0}}">{{info.order_count.wait_pay}}</text>
-    </view>
-    <view class='m-btn' bindtap='nav2order_list' data-type="2">
-      <image src='/images/my/icon-16.png' class='u-icon-2'></image>
-      <text class='u-name'>待使用</text>
-      <text class='u-tips' wx:if="{{ info.order_count && info.order_count.wait_receive != 0}}">{{info.order_count.wait_receive}}</text>
-    </view>
-    <view class='m-btn' bindtap='nav2order_list' data-type="3">
-      <image src='/images/my/icon-17.png' class='u-icon-3'></image>
-      <text class='u-name'>未收货</text>
-      <text class='u-tips'  wx:if="{{info.order_count && info.order_count.wait_use != 0}}">{{info.order_count.wait_use}}</text>
-    </view>
-    <view class='m-btn' bindtap='nav2order_list' data-type="4">
-      <image src='/images/my/icon-18.png' class='u-icon-4'></image>
-      <text class='u-name'>待评价</text>
-      <text class='u-tips' wx:if="{{ info.order_count && info.order_count.wait_comment != 0}}">{{info.order_count.wait_comment}}</text>
+      <view class='m-btn' bindtap='nav2order_list' data-type="1">
+        <image src='/images/my/icon-15.png' class='u-icon-1'></image>
+        <text class='u-name'>代付款</text>
+        <text class='u-tips' wx:if="{{info.order_count && info.order_count.wait_pay != 0}}">{{info.order_count.wait_pay}}</text>
+      </view>
+      <view class='m-btn' bindtap='nav2order_list' data-type="2">
+        <image src='/images/my/icon-16.png' class='u-icon-2'></image>
+        <text class='u-name'>待使用</text>
+        <text class='u-tips' wx:if="{{ info.order_count && info.order_count.wait_receive != 0}}">{{info.order_count.wait_receive}}</text>
+      </view>
+      <view class='m-btn' bindtap='nav2order_list' data-type="3">
+        <image src='/images/my/icon-17.png' class='u-icon-3'></image>
+        <text class='u-name'>未收货</text>
+        <text class='u-tips' wx:if="{{info.order_count && info.order_count.wait_use != 0}}">{{info.order_count.wait_use}}</text>
+      </view>
+      <view class='m-btn' bindtap='nav2order_list' data-type="4">
+        <image src='/images/my/icon-18.png' class='u-icon-4'></image>
+        <text class='u-name'>待评价</text>
+        <text class='u-tips' wx:if="{{ info.order_count && info.order_count.wait_comment != 0}}">{{info.order_count.wait_comment}}</text>
+      </view>
     </view>
   </view>
-</view>
-<view class='g-white-box g-plate-3'>
-  <view class='m-cont' bindtap='nav2bargain_list'>
-    <text class='u-name'>砍价订单</text>
-    <view class='u-icon'></view>
+  <view class='g-white-box g-plate-3'>
+    <view class='m-cont' bindtap='nav2bargain_list'>
+      <text class='u-name'>砍价订单</text>
+      <view class='u-icon'></view>
+    </view>
+    <view class='m-cont' bindtap='nav2red_envelope'>
+      <text class='u-name'>我的红包</text>
+      <text class='u-tips' wx:if="{{info.hongbao_count != 0}}">{{info.hongbao_count}}</text>
+      <view class='u-icon'></view>
+    </view>
+    <view class='m-cont'>
+      <text class='u-name' bindtap='show_card_dialog'>商品兑换</text>
+      <view class='u-icon'></view>
+    </view>
+    <view class='m-cont' bindtap='contact'>
+      <text class='u-name'>联系客服</text>
+      <view class='u-icon'></view>
+    </view>
   </view>
-  <view class='m-cont' bindtap='nav2red_envelope'>
-    <text class='u-name'>我的红包</text>
-    <text class='u-tips' wx:if="{{info.hongbao_count != 0}}">{{info.hongbao_count}}</text>
-    <view class='u-icon'></view>
+  <view class='g-msg'>
+    <text>{{version}}</text>
+    <text>{{config.business_config_base.copyright}}</text>
   </view>
-  <view class='m-cont'>
-    <text class='u-name' bindtap='show_card_dialog'>商品兑换</text>
-    <view class='u-icon'></view>
-  </view>
-  <view class='m-cont' bindtap='contact'>
-    <text class='u-name'>联系客服</text>
-    <view class='u-icon'></view>
-  </view>
-</view>
-<view class='g-msg'>
-  <text>v1.0.0</text>
-  <text>{{config.business_config_base.copyright}}</text>
-</view>
-<view style='height: 48px; width:750rpx; '></view>
+  <view style='height: 48px; width:750rpx; '></view>
 </block>
 
 
@@ -141,12 +140,11 @@
 </dialog>
 
 <dialog show="{{show_bind_wx}}">
-    <view class='m-main-box'>
-      <text class='u-bindwx-h3'>绑定微信号</text>
-      <input placeholder='请输入微信号码' value='{{info.user_info.wx_account}}' bindinput='input'></input>
-      <view class='u-bindwx-btn {{wx_account?"f-hover":""}}' bindtap='bindwx'>确认绑定</view>
-    </view>
-
+  <view class='m-main-box'>
+    <text class='u-bindwx-h3'>绑定微信号</text>
+    <input placeholder='请输入微信号码' value='{{info.user_info.wx_account}}' bindinput='input'></input>
+    <view class='u-bindwx-btn {{wx_account?"f-hover":""}}' bindtap='bindwx'>确认绑定</view>
+  </view>
 </dialog>
 
 <dialog show="{{show_rank}}">
@@ -154,16 +152,16 @@
     <view class='m-upcont-box'>
       <view class='m-up-cont'>
         <view class='m-up-top'>
-          <text class='u-t1'>金牌合伙人</text>
-          <text class='u-t2'>下个等级：钻石合伙人</text>
+          <text class='u-t1'>{{level.current_name}}</text>
+          <text class='u-t2'>下个等级：{{level.name}}</text>
           <image src='/images/my/bg-8.png' class='u-top-bg'></image>
         </view>
         <view class='m-up-main'>
           <text class='u-t1'>升级需要满足以下条件：</text>
           <view class='u-t2'>销售额还差
-            <view>1000.00</view> 元即可升级新进成员人数还差
-            <view>15</view> 人</view>
-          <view class='u-btn'>我知道了</view>
+            <view>{{level.limit_money_min}}</view> 元即可升级新进成员人数还差
+            <view>{{level.limit_member_num}}</view> 人</view>
+          <view class='u-btn' bindtap='close'>我知道了</view>
         </view>
       </view>
       <image src='/images/my/icon-33.png' class='u-close-btn' bindtap='close'></image>

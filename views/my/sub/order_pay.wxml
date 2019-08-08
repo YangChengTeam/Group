@@ -1,5 +1,5 @@
 <!--views/my/sub/order_pay.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="支付"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="支付"></nav> -->
 
 <view class='g-time-box'>
   <text class='u-t1'>支付剩余时间</text>

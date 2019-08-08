@@ -1,5 +1,5 @@
 <!--views/my/red_envelope.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="我的红包"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="我的红包"></nav> -->
 
 <view class='g-user-box'>
   <image src='{{userInfo.face}}' class='u-user-img'></image>
@@ -21,7 +21,7 @@
       <view class='m-left'>
         <view class='m-left-top'>
           <text class='u-t1'>{{item.limit_type_str}}</text>
-          <text class='u-t2'>有效期至{{item.valid_data}}({{item.diff_time<=0?"已过期":""}})</text>
+          <text class='u-t2'>{{item.diff_time<=0?"已过期":"有效期至" + item.valid_data}}</text>
         </view>
         <text class='m-left-bottom'>{{item.hongbao_name}}</text>
       </view>

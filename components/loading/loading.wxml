@@ -1,7 +1,7 @@
 <!--components/loading/loading.wxml-->
-<view class="loading">
-  <image src='loading.gif' wx:if="{{show}}"></image>
-  <view>玩命加载中...</view>
+<view class="loading"  wx:if="{{show}}" style='height:{{height}}px;'>
+  <image src='loading.gif'></image>
+  <view class="loading-text">玩命加载中...</view>
 
-  <view class = "version">v1.1.1</view>
+  <view class = "version">{{version}}</view>
 </view>

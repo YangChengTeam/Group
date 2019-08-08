@@ -14,7 +14,7 @@ page {
   left: 0;
   top: 0;
   z-index: 0;
-  background: linear-gradient(to right, #f35052 , #fb715d);
+  background: #fb715d; /*linear-gradient(to right, #f35052 , #fb715d);*/
 }
 
 .g-top-box {

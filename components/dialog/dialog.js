@@ -29,6 +29,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    pad(){},
+    dismiss(){
+       this.setData({
+           show: 0
+       })
+    },
     toogle(opacity){
        var animation = wx.createAnimation({
          duration: 500,

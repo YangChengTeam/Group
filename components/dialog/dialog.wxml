@@ -1,6 +1,6 @@
 <!--compoents/dialog/dialog.js.wxml-->
-<view class="mask" animation="{{animationDataMask}}">
+<view class="mask" animation="{{animationDataMask}}" bindtap='dismiss'>
      <view class="mask-content" animation="{{animationData}}">
-          <slot></slot>
+          <slot  catchtap='pad'></slot>
      </view>
 </view>

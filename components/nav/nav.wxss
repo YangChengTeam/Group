@@ -44,15 +44,15 @@
 }
 
 .nav-search input {
-   width: 200rpx;
-   height: 20rpx;
-   background: #eee;
-   border: #ddd solid 1rpx;
+   width: 300rpx;
+   height: 60rpx;
+   background: rgba(100, 100, 100, 0.4);
+   border: #f0f0f0 solid 1rpx;
    border-radius: 10rpx;
-   font-size: 18rpx;
+   font-size: 24rpx;
 }
 
 .placeholder-input {
-   color:#fff;
+   color:#a4a4a4;
 }
 

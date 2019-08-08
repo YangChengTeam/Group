@@ -21,35 +21,28 @@
     "views/shop/index",
     "views/withdraw/index",
     "views/withdraw/withdraw",
-    "views/withdraw/success"
+    "views/withdraw/success",
+    "views/good/index"
   ],
   "subpackages": [
     {
       "root": "views/my/sub",
       "pages": [
-        
         "join_partner",
-        
         "client",
         "rank",
         "promotion_record",
-
         "bargain_list",
-       
         "order_list",
         "order_pay",
         "order_detail",
         "order_comment",
         "order_comment_success",
-                
+        "order_logistics",
         "red_envelope",
         "red_envelope_detail",
         "exchange_red_envelope",
-        "point_record",
-
-        "promotion_content"
-        
-        
+        "point_record"
       ],
       "independent": true
     }
@@ -74,8 +67,8 @@
         "text": "抢购"
       },
       {
-        "pagePath": "views/list/act_list",
-        "text": "好店"
+        "pagePath": "views/good/index",
+        "text": "好评"
       },
       {
         "pagePath": "views/my/index",
@@ -87,11 +80,13 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "武汉团购",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "nav": "../../components/nav/nav",
-    "tab": "../../custom-tab-bar/index"
+    "tab": "../../custom-tab-bar/index",
+    "loading": "../../components/loading/loading",
+    "statusview": "../../components/statusview/statusview"
   }
 }

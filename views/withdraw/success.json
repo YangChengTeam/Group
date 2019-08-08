@@ -1,3 +1,6 @@
-{
-  "usingComponents": {}
+{ 
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "提现进度",
+  "usingComponents": {},
+  "enablePullDownRefresh": true
 }

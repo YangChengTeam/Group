@@ -1,4 +1,6 @@
-{
+{ 
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "商品",
   "usingComponents": {
     "tab-bar": "../../components/shop-tab-bar/tab-bar",
     "statusview": "../../components/statusview/statusview"

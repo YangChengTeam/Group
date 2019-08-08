@@ -1,5 +1,5 @@
 <!--views/my/sub/order_detail.wxml-->
-<nav isnop="{{0}}" background="#fff" isback="1" title="订单详情"></nav>
+<!-- <nav isnop="{{0}}" background="#fff" isback="1" title="订单详情"></nav> -->
 
 <view class='g-white-box' wx:for="{{info.info.write_off}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
   <view class='u-h3'>
@@ -76,10 +76,10 @@
     <text class='u-h3-t1'>订单金额： </text>
   </view>
   <view class='m-main-box'>
-    <view class='m-case-money'>
+    <!-- <view class='m-case-money'>
       <text class='u-text-left'>App优惠金额</text>
       <text class='u-text-center'>￥{{info.info.orders.app_money}}</text>
-    </view>
+    </view> -->
     <view class='m-case-money'>
       <text class='u-text-left'>团长优惠金额</text>
       <text class='u-text-center'>￥{{info.info.orders.founder_money}}</text>

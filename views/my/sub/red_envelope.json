@@ -1,4 +1,6 @@
 {
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的红包",
   "usingComponents": {
         "statusview": "../../components/statusview/statusview"
   }

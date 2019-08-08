@@ -1,8 +1,7 @@
 {
+  "navigationBarBackgroundColor": "#fb715d",
+  "navigationBarTextStyle": "white",
   "usingComponents": {
-     "dialog": "../../components/dialog/dialog",
-     "loading": "../../components/loading/loading"
-  },
-  "enablePullDownRefresh": true
-      
+    "dialog": "../../components/dialog/dialog"
+  }
 }

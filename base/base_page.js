@@ -7,12 +7,12 @@ const request = require('../libs/kk/request.js')
 /**
  *  页面基类
  */
-var BasePage = function (obj) {
+var BasePage = function(obj) {
 
   /**
    * 选择Tab 
    */
-  obj.selectedTab = function () {
+  obj.selectedTab = function() {
     var thiz = this
     var index = -1;
 
@@ -26,22 +26,49 @@ var BasePage = function (obj) {
         break
       }
     }
-
+    this.setData({
+      selected: index
+    })
     if (hasTabBar) {
       this.getTabBar().setData({
         selected: index
       })
-    } else {
-      this.setData({
-        selected: index
+    } 
+  }
+
+  obj.loading = function() {
+    if (this.loaded) return
+    this.loaded = 1
+    this.setData({
+      navOpacity: 1,
+      loading: 1
+    })
+    obj.showTabs(0)
+  }
+
+  obj.loadend = function() {
+    obj.showTabs(1)
+    this.setData({
+      navOpacity: 0,
+      loading: 0
+    })
+  }
+
+  obj.showTabs = function(show) {
+    var thiz = this
+    var hasTabBar = typeof this.getTabBar === 'function' &&
+      this.getTabBar()
+    if (hasTabBar) {
+      console.log("show->"+show)
+      thiz.getTabBar().setData({
+        show: show
       })
     }
   }
-
   /**
    * 刷新Tab 
    */
-  obj.refreshTabs = function (list) {
+  obj.refreshTabs = function(list) {
     var thiz = this
 
     if (list) {
@@ -67,14 +94,10 @@ var BasePage = function (obj) {
         thiz.getTabBar().setData({
           list: app.tabList
         })
-      } else {
-        thiz.setData({
-          tabList: app.tabList
-        })
       }
     }
   }
-  obj.request = async function (options, msg) {
+  obj.request = async function(options, msg) {
     var params = {
       token: "1",
     }
@@ -105,22 +128,22 @@ var BasePage = function (obj) {
     }
     wx.stopPullDownRefresh()
   }
-
-
   /**
    * 重载Page onLoad
    */
-  obj.mirror_onLoad = obj.onLoad || function () { };
-  obj.onLoad = function () {
+  obj.mirror_onLoad = obj.onLoad || function(options) {};
+  obj.onLoad = function(options) {
     obj = {
       ...obj,
       ...this
     } // 合并到子Page
-    obj.mirror_onLoad()
+
+    obj.mirror_onLoad(options)
     this.page = 1
     this.data.status = -2
-    
+
     this.setData({
+      version: app.version || "v1.0.0",
       config: app.config || {},
       basicConfig: app.templateConfig.theme,
       totalTopHeight: app.totalTopHeight,
@@ -132,21 +155,24 @@ var BasePage = function (obj) {
   /**
    * 重载Page onShow
    */
-  obj.mirror_onShow = obj.onShow || function () { };
-  obj.onShow = function () {
+  obj.mirror_onShow = obj.onShow || function() {};
+  obj.onShow = function() {
     obj.mirror_onShow()
     this.selectedTab()
   }
-
-  obj.select = function (e) {
+  obj.mirror_select = obj.select || function(e){};
+  obj.select = function(e) {
     this.params.status = e.currentTarget.dataset.type
     if (this.data.type === this.params.status) return
+    obj.mirror_select()
     this.setData({
       type: this.params.status,
       list: []
     })
     this.refreshData()
   }
+
+  
 
   Page(obj)
 }

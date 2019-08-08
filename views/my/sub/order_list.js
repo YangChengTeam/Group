@@ -39,17 +39,105 @@ ListPage({
    */
   onLoad: function(options) {
     this.setData({
-       type: this.data.typeInfos[app.type].type
+      type: this.data.typeInfos[app.type].type
     })
     this.path = "/user/my_orders"
     this.params = {
       status: this.data.type
     }
   },
-  onShow(){
-    if(app.isRefresh){
+  onShow() {
+    if (app.isRefresh) {
       this.refreshData()
     }
+  },
+  nav2logistics(e) {
+    var item = e.currentTarget.dataset.item
+    app.orderInfo = item
+    wx.navigateTo({
+      url: '/views/my/sub/order_logistics',
+    })
+  },
+  nav2comment(e) {
+    var item = e.currentTarget.dataset.item
+    app.orderInfo = item
+    wx.navigateTo({
+      url: '/views/my/sub/order_comment',
+    })
+  },
+  contact(e) {
+    wx.makePhoneCall({
+      phoneNumber: app.config.business_config_service.tel,
+    })
+  },
+  cancel_refund(e){
+    var item = e.currentTarget.dataset.item
+    app.orderInfo = item
+    wx.showModal({
+      title: '提示',
+      content: '您确定取消退款吗?',
+      success: (res) => {
+        if (res.confirm) {
+          that.request({
+            path: "/user/my_orders/del",
+            params: {
+              id: id
+            },
+            success(info) {
+              wx.showToast({
+                title: '删除成功',
+              })
+            }
+          })
+        }
+      }
+    })
+  },
+  refund(e) {
+    var item = e.currentTarget.dataset.item
+    app.orderInfo = item
+    wx.showModal({
+      title: '提示',
+      content: '您确定退款吗?',
+      success: (res) => {
+        if (res.confirm) {
+          that.request({
+            path: "/user/my_orders/del",
+            params: {
+              id: id
+            },
+            success(info) {
+              wx.showToast({
+                title: '删除成功',
+              })
+            }
+          })
+        }
+      }
+    })
+  },
+  confirm_receipt(e) {
+    var item = e.currentTarget.dataset.item
+    app.orderInfo = item
+    wx.showModal({
+      title: '提示',
+      content: '您确定收货吗?',
+      success: (res) => {
+        if (res.confirm) {
+          that.request({
+            path: "/user/my_orders/del",
+            params: {
+              id: id
+            },
+            success(info) {
+              wx.showToast({
+                title: '删除成功',
+              })
+            }
+          })
+        }
+      }
+    })
   },
   del(e) {
     var id = e.currentTarget.dataset.id
@@ -84,21 +172,15 @@ ListPage({
       }
     })
   },
-  comment(e) {
-    var item = e.currentTarget.dataset.item
-    app.orderInfo = item
-    wx.navigateTo({
-      url: '/views/my/sub/order_comment',
-    })
-  },
-  nav2pay(e){
+
+  nav2pay(e) {
     var item = e.currentTarget.dataset.item
     app.orderInfo = item
     wx.navigateTo({
       url: '/views/my/sub/order_pay',
     })
   },
-  nav2detail(e){
+  nav2detail(e) {
     var item = e.currentTarget.dataset.item
     app.orderInfo = item
     wx.navigateTo({

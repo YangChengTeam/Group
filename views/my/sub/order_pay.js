@@ -5,7 +5,7 @@ const regeneratorRuntime = global.regeneratorRuntime = require('libs/runtime')
 const app = getApp()
 
 const InfoPage = require('base/info_page.js')
-
+var timeid
 InfoPage({
 
   /**
@@ -29,7 +29,7 @@ InfoPage({
     this.success = function(info){
       var t = info.info.countdown
       if (info && info.info && info.info.countdown > 0){
-          setInterval(()=>{
+          timeid = setInterval(()=>{
             t -= 1
             that.setData({
               countdownStr: that.int2time(t)
@@ -117,7 +117,14 @@ InfoPage({
     }
     this.request(options)
   },
-
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    if (timeid) {
+      clearInterval(timeid)
+    }
+  },
   /**
    * 用户点击右上角分享
    */

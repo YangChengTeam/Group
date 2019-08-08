@@ -69,6 +69,23 @@ BasePage({
       }
     })
   },
+  del(e){
+    var that = this
+    var idx = e.currentTarget.dataset.idx
+    console.log(idx)
+    wx.showModal({
+      title: '提示',
+      content: '是否删除图片?',
+      success: (res) => {
+        if (res.confirm) {
+          that.data.imgs.splice(idx, 1)
+          that.setData({
+            imgs: that.data.imgs
+          })
+        }
+      }
+    })
+  },
   input(e) {
     this.data.content = e.detail.value
   },
@@ -85,11 +102,12 @@ BasePage({
             }
           }
         })
-        return
+        return false
     }
     wx.navigateBack({
 
     })
+    return true
   },
   async submit() {
     if (!this.data.content || this.data.content.length < 15) {
